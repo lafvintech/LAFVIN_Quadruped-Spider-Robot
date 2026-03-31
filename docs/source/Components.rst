@@ -34,8 +34,9 @@ The Quadruped Spider Robot Expansion Board is specifically designed for this kit
 
 The following is a pinout diagram of the expansion board and the ESP8266 development board:
 
-.. list-table:: ESP8266 Digital Pin to GPIO Mapping
+.. list-table::
    :header-rows: 1
+   :widths: 30 30
 
    * - Digital Pin
      - GPIO
