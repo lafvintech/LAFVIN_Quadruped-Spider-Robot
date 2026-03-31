@@ -47,7 +47,7 @@ STEP 2: Assemble development board
 
 ----
 
-STEP 2: Assemble  body servo 
+STEP 3: Assemble  body servo 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Parts list：** MG90S Servo (4PCS)、M2*10mm screw (8PCS) M2 nut(8PCS).
@@ -66,6 +66,10 @@ STEP 2: Assemble  body servo
 
 ----
 
-The following picture shows the completed body assembly of the spider robot:
+STEP 4: Wiring of the body servo  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
 
 ----
