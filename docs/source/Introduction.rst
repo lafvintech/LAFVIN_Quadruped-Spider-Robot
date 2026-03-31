@@ -15,23 +15,13 @@
 Introduction
 ============
 
-*This is a smart electronic keyboard learning kit based on the ESP32 microcontroller, integrating programming learning, music education, and electronic engineering. Through vivid light effects and realistic scales, learners can grasp modern technological principles while creating music.*
+This quadruped spider robot, based on the ESP8266, features a multi-degree-of-freedom design and offers a wide range of flexible movements. It integrates Wi-Fi, infrared remote control, and ultrasonic obstacle avoidance, and is equipped with eight MG90 servos, supporting six postures and nine preset actions. A comprehensive curriculum is included, and open-source code supports secondary development, making it suitable for teaching, demonstrations, research, and maker projects.
 
-1. Dual-Mode Playing System
-Manual Playing Mode: 7 touch buttons correspond to the complete scale（Do-Si）, supporting real-time playing.
-Automatic Playing Mode: 3 built-in classic songs play automatically:
-"Twinkle Twinkle Little Star"、"Jingle Bells"、"Happy Birthday".
+1. Wi-Fi/Infrared Dual-Mode Remote Control: Supports both APP and infrared remote control.
 
-2. Intelligent Visual Feedback System
-8 Programmable RGB LED Beads
-Manual Mode: Dynamic lighting effects triggered by a button, with a high-brightness center and gradient on both sides
-Automatic Mode: Three exclusive light shows
+2. Ultrasonic Intelligent Obstacle Avoidance: Automatically detects the distance to obstacles ahead and automatically steers when an obstacle is encountered.
 
-3. Precision Audio System
-PWM audio output for accurate pitch.
-Manual mode supports beat quantization（120 BPM）.
-Automatic mode includes original track rhythm reproduction.
-
+3. Entertainment Performance: Bionic design with multiple preset dance and movement modes for performance demonstrations.
 ----
 
 Bill of Materials
@@ -50,38 +40,38 @@ Bill of Materials
      - Name
      - Quantity
    * - 1
-     - ESP32 Devkit
+     - ESP8266 Development Board
      - x1
    * - 2
-     - Bread Board
+     - Quadruped Spider Extension Board
      - x1
    * - 3
-     - Speaker
-     - x1  
+     - Ultrasonic Distance Sensor
+     - x1
    * - 4
-     - Button Module
-     - x9
+     - MG90 Servo 
+     - x8
    * - 5
-     - Button Cap
-     - x9
+     - Infrared Remote Controller
+     - x1
    * - 6
-     - RGB Light Strip
-     - x1 
+     - Custom Acrylic Plate Set
+     - x1
    * - 7
-     - Screw package
-     - x1 
+     - Micro USB Data Cable
+     - x1
    * - 8
-     - Phillips screwdriver
-     - x1 
+     - Screw Package
+     - x1
    * - 9
-     - Type-C data cable
+     - Phillips Screwdriver
      - x1
    * - 10
-     - Basswood Board
-     - x7
+     - Cable Ties
+     - x4
    * - 11
-     - Jumper Wire
-     - Several
+     - Anti-slip Rubber Sleeves
+     - x8
 
 
 Upon receiving the kit, please first check all components against the above bill of materials. If you find any missing or damaged items, please contact our technical support team immediately.
