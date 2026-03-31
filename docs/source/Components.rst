@@ -61,10 +61,10 @@ The following is a pinout diagram of the expansion board and the ESP8266 develop
 
 ----
 
-MG90S servo
+MG90S Servo
 -----------
 
-The **MG90S** is a small, lightweight servo motor widely used in robotics and RC applications. It features high torque, fast response time, and precise angle control, making it ideal for driving the legs of the spider robot in this kit.
+The **MG90S Servo** is a small, lightweight servo motor widely used in robotics and RC applications. It features high torque, fast response time, and precise angle control, making it ideal for driving the legs of the spider robot in this kit.
 
 **Operating Principle:**
 
@@ -92,5 +92,54 @@ The expansion board has dedicated servo ports that simplify wiring and provide s
 - Driving the four legs through hip, knee, and ankle joints
 - Independent control of each servo allows the robot to move in different directions
 - Synchronized servo control enables walking, turning, and dynamic movements
+
+----
+
+Ultrasonic Distance Sensor
+--------------------------
+
+.. image:: _static/Component/2.CSB.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+The **HC-SR04** is a popular ultrasonic ranging sensor that uses sound waves to measure distance. It provides accurate, non-contact distance measurement, making it perfect for obstacle detection and navigation in robotics applications like the spider robot.
+
+**Key Specifications:**
+
+- **Operating Voltage**: 5V DC
+- **Measurement Range**: 2 cm to 400 cm
+- **Accuracy**: ±3 mm
+- **Resolution**: 1 mm
+- **Trigger Signal**: 10 μs TTL pulse
+- **Echo Signal**: Pulse width proportional to distance
+- **Frequency**: 40 kHz ultrasonic waves
+- **Current Consumption**: 15 mA (active), <2 mA (standby)
+
+**Operating Principle:**
+
+The HC-SR04 works by emitting ultrasonic sound waves and measuring the time it takes for the echo to return:
+
+.. image:: _static/Component/3.CSB.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+1. **Trigger**: A 10 μs high pulse on the Trig pin initiates measurement
+2. **Transmission**: The sensor sends out 8 pulses of 40 kHz ultrasonic waves
+3. **Echo Reception**: The Echo pin goes high when the waves are sent and stays high until the echo is received
+4. **Distance Calculation**: Distance = (Echo pulse width × Speed of sound) / 2
+
+The speed of sound in air is approximately 343 m/s (at 20°C). The formula is: Distance (cm) = (Echo pulse width in μs) / 58.2
+
+**Common Applications in Spider Robot:**
+
+- Obstacle detection to avoid collisions during movement
 
 ----
