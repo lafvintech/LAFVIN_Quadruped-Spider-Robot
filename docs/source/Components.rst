@@ -101,7 +101,7 @@ Ultrasonic Distance Sensor
 The **HC-SR04 Ultrasonic Distance Sensor** is a popular ultrasonic ranging sensor that uses sound waves to measure distance. It provides accurate, non-contact distance measurement, making it perfect for obstacle detection and navigation in robotics applications like the spider robot.
 
 .. image:: _static/Component/2.CSB.png
-   :width: 800
+   :width: 500
    :align: center
 
 .. raw:: html
@@ -143,3 +143,42 @@ The speed of sound in air is approximately 343 m/s (at 20°C). The formula is: D
 - Obstacle detection to avoid collisions during movement
 
 ----
+
+Infrared Receiver
+-----------------
+
+The **IRM-3638T** is an infrared (IR) receiver module designed to detect and decode infrared signals from remote controls and other IR transmitters. It is commonly used in consumer electronics and robotics for wireless control applications.
+
+.. image:: _static/Component/4.IR.png
+   :width: 500
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+**Key Specifications:**
+
+- **Operating Voltage**: 2.7V – 5.5V DC
+- **Carrier Frequency**: 38 kHz (typical for IR remote controls)
+- **Detection Range**: Up to 10 meters (depending on transmitter strength and ambient conditions)
+- **Viewing Angle**: ±45° (90° total)
+- **Output**: Active low (goes low when IR signal is detected)
+
+**Operating Principle:**
+
+The IRM-3638T contains a photodiode, amplifier, and demodulator circuit that filters and decodes modulated IR signals:
+
+1. **IR Reception**: The photodiode detects incoming IR light pulses
+2. **Amplification**: The signal is amplified and filtered to remove noise
+3. **Demodulation**: The 38 kHz carrier wave is demodulated to extract the data signal
+4. **Output**: The data signal is output as a digital pulse train on the OUT pin
+
+The module automatically handles the IR protocol decoding, outputting a clean digital signal that can be read by the microcontroller.
+
+**Common Applications in Spider Robot:**
+
+- Remote control for manual operation.
+
+----
+
