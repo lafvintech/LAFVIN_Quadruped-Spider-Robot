@@ -22,6 +22,7 @@ This quadruped spider robot, based on the ESP8266, features a multi-degree-of-fr
 2. Ultrasonic Intelligent Obstacle Avoidance: Automatically detects the distance to obstacles ahead and automatically steers when an obstacle is encountered.
 
 3. Entertainment Performance: Bionic design with multiple preset dance and movement modes for performance demonstrations.
+
 ----
 
 Bill of Materials
