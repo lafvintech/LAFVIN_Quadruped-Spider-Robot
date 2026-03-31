@@ -12,7 +12,7 @@ Programming Program
 
 This kit uses an ESP8266 board with a CP2102 USB-to-UART bridge. Ensure the CP2102 driver is installed on your computer before connecting the board, or the serial port will not be detected. Connect the board, press Win+X to open Device Manager, and verify the driver is installed. If not, use the link below to download and install it.
 
-.. image:: _static/Program/1.CP2102.png
+.. image:: _static/program/1.CP2102.png
    :width: 800
    :align: center
 
@@ -30,7 +30,7 @@ After installing the serial port tool, connect the ESP8266 development board to 
 
 A. Click here to open the LAFVIN ESP Web Tool: `LAFVIN ESP Web Tool <https://lafvintech.github.io/Lafvin_Web_Flasher/>`_
 
-.. image:: _static/Program/2.lafvin.png
+.. image:: _static/program/2.lafvin.png
    :width: 800
    :align: center
 
@@ -38,19 +38,19 @@ B. Select the corresponding program for burning according to the image below.
 
 C. Click **CONNCE**, and in the pop-up window, select the corresponding port to connect.
 
-.. image:: _static/Program/4.lafvin.png
+.. image:: _static/program/4.lafvin.png
    :width: 800
    :align: center
 
 D. Click **FLASH** to start the burning process.
 
-.. image:: _static/Program/5.LAFVIN.png
+.. image:: _static/program/5.LAFVIN.png
    :width: 800
    :align: center
 
 E. Waiting for the burning process to complete.
 
-.. image:: _static/Program/6.lafvin.png
+.. image:: _static/program/6.lafvin.png
    :width: 800
    :align: center
 
