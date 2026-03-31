@@ -36,7 +36,7 @@ The following is a pinout diagram of the expansion board and the ESP8266 develop
 
 .. list-table::
    :header-rows: 1
-   :widths: 30 30
+   :widths: 50 50
 
    * - Digital Pin
      - GPIO

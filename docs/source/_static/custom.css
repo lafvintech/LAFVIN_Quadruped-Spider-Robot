@@ -2,7 +2,7 @@
 body {
     background-color: #ffffff;
     color: #333333;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* 链接样式 */
@@ -11,6 +11,18 @@ a {
 }
 a:hover {
     color: #007ACC;
+}
+
+/* 代码块字体 */
+code, pre, .rst-content code {
+    font-family: "Courier New", "Consolas", monospace;
+    font-size: 0.95em;
+}
+
+/* 标题字体 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
 }
 
 /* 搜索框背景 */
@@ -28,6 +40,7 @@ a:hover {
     background-color: #e6f2fa;
     color: #007ACC;
 }
+
 
 /* 当前选中项高亮 + 左边蓝色竖线 */
 .wy-menu-vertical .current > a,
