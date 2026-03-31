@@ -3,19 +3,19 @@ kit For Learning Course
 
 **In this section, we will use the components in this kit to expand our learning, gradually mastering the principles and functional characteristics of each component in order of depth, and completing the corresponding program writing.**
 
-**The sixth code is the complete code for this kit "ESP32 DIY Electronic Piano," which you can click here to view.**
+**The sixth code is the complete code for this kit "Quadruped Spider Robot," which you can click here to view.**
 
-:ref:`ESP32 DIY Electronic Piano`
+:ref:`Quadruped Spider Robot`
 
 ----
 
-1. Breathing-Lamp
------------------
+1. ESP8266 Basic GPIO Control
+-----------------------------
 
 Wiring diagram
 ~~~~~~~~~~~~~~
 
-.. image:: _static/course/1.course.png
+.. image:: _static/course/1.esp8266_basic.png
    :width: 800
    :align: center
 
@@ -23,7 +23,7 @@ Wiring diagram
 
    <div style="margin-top: 30px;"></div>
 
-- RGB —— ESP32 IO15
+- LED —— ESP8266 D1 (GPIO5)
 
 ----
 
@@ -32,60 +32,41 @@ Example code
 
 .. code-block:: cpp
 
-    #include <Adafruit_NeoPixel.h>
+    // ESP8266 Basic GPIO Control - LED Blinking
+    #define LED_PIN 5  // GPIO5 (D1)
 
-    #define LED_PIN    15      // Data pin connected to GPIO15
-    #define LED_COUNT  1       // Using 1 LED only
+    void setup() {
+      pinMode(LED_PIN, OUTPUT);
+      Serial.begin(115200);
+      Serial.println("ESP8266 GPIO Control Test");
+    }
 
- Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+    void loop() {
+      digitalWrite(LED_PIN, HIGH);
+      Serial.println("LED ON");
+      delay(1000);
 
- // Breathing effect variables
- int brightness = 0;    // Current brightness (0-255)
- int fadeAmount = 1;    // How much to change brightness each time
- int delayTime = 15;    // Delay between updates (ms)
-
- void setup() {
-  strip.begin();
-  strip.show();  // Initialize all pixels to 'off'
-  strip.setBrightness(255);  // Set maximum brightness for strip
-  
-  Serial.begin(115200);
-  Serial.println("RGB Breathing LED Test");
-  Serial.println("LED should slowly breathe (fade in and out)");
- }
-
- void loop() {
-  // Set LED color with current brightness (red color)
-  strip.setPixelColor(0, brightness, 0, 0);
-  strip.show();
-  
-  // Change brightness for next time
-  brightness = brightness + fadeAmount;
-  
-  // Reverse direction at the ends of fade
-  if (brightness <= 0 || brightness >= 255) {
-    fadeAmount = -fadeAmount;
-  }
-  
-  delay(delayTime);
- }
+      digitalWrite(LED_PIN, LOW);
+      Serial.println("LED OFF");
+      delay(1000);
+    }
 
 ----
 
 Achieved Effect
 ~~~~~~~~~~~~~~~~
 
- - The first LED in the RGB light is red, and it goes from bright to dim and then bright again, just like breathing.
+ - The LED connected to GPIO5 blinks on and off every second, demonstrating basic digital output control.
 
 ----
 
-2. Button_Count
------------------
+2. Button Input and LED Control
+-------------------------------
 
 Wiring diagram
 ~~~~~~~~~~~~~~
 
-.. image:: _static/course/6.course.png
+.. image:: _static/course/2.button_led.png
    :width: 800
    :align: center
 
@@ -93,8 +74,8 @@ Wiring diagram
 
    <div style="margin-top: 30px;"></div>
 
-- RGB —— ESP32 IO15
-- Button —— ESP32 IO5
+- LED —— ESP8266 D1 (GPIO5)
+- Button —— ESP8266 D2 (GPIO4)
 
 ----
 
@@ -103,259 +84,452 @@ Example code
 
 .. code-block:: cpp
 
- #include <Adafruit_NeoPixel.h>
+    // Button Input and LED Control
+    #define LED_PIN 5    // GPIO5 (D1)
+    #define BUTTON_PIN 4 // GPIO4 (D2)
 
- // Pin definitions
- #define BUTTON_PIN 5      // Button connected to GPIO13
- #define LED_PIN    15      // LED strip data pin connected to GPIO15
- #define LED_COUNT  1       // Using 1 LED
-
- Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
-
- // Variables
- int pressCount = 0;       // Button press counter
- bool lastButton = false;  // Previous button state
-
- void setup() {
-  // Configure button pin with internal pull-up
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-  
-  // Initialize LED strip
-  strip.begin();
-  strip.show();  // Turn off all LEDs
-  strip.setBrightness(50);
-  
-  // Initialize serial communication
-  Serial.begin(115200);
-  Serial.println("Button Counter Started");
-  Serial.println("Press button: LED turns RED, counter increases");
-  Serial.println("Release button: LED turns OFF");
- }
-
- void loop() {
-  // Read button state (LOW = pressed when using INPUT_PULLUP)
-  bool buttonPressed = digitalRead(BUTTON_PIN) == LOW;
-  
-  // Control RGB LED
-  if (buttonPressed) {
-    strip.setPixelColor(0, strip.Color(255, 0, 0));  // Red when pressed
-    strip.show();
-  } else {
-    strip.setPixelColor(0, strip.Color(0, 0, 0));    // Off when released
-    strip.show();
-  }
-  
-  // Detect button press (rising edge detection)
-  if (buttonPressed && !lastButton) {
-    pressCount++;  // Increment counter
-    
-    Serial.print("Button pressed! Total: ");
-    Serial.println(pressCount);
-  }
-  
-  // Save current state for next loop
-  lastButton = buttonPressed;
-  
-  // Small delay for stability
-  delay(50);
- }
-----
-
-Achieved Effect
-~~~~~~~~~~~~~~~~
-
- - Press the button and the first LED of the RGB light will light up.
- - Open the serial monitor, which will record the number of times the button was pressed.
-
-.. image:: _static/course/3.course.png
-   :width: 1000
-   :align: center
-
-----
-
-3. Rgb_Color_Lamp
------------------
-
-Wiring diagram
-~~~~~~~~~~~~~~
-
-.. image:: _static/course/6.course.png
-   :width: 800
-   :align: center
-
-.. raw:: html
-
-   <div style="margin-top: 30px;"></div>
-  
-- RGB —— ESP32 IO15
-- Button —— ESP32 IO5
-
-----
-
-Example code
-~~~~~~~~~~~~
-
-.. code-block:: cpp
-
- #include <Adafruit_NeoPixel.h>
-
- #define BUTTON_PIN 5
- #define LED_PIN    15
- #define LED_COUNT  8
-
- Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
-
- // Simple variables
- int mode = 0;           // 0=Off, 1=Red, 2=Green, 3=Blue, 4=Rainbow, 5=Wave
- int brightness = 100;
- bool lastButton = HIGH;
- unsigned long pressTime = 0;
- int animationStep = 0;
-
- void setup() {
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-  strip.begin();
-  strip.setBrightness(brightness);
-  Serial.begin(115200);
-  Serial.println("8-LED Interactive Light Ready");
-  updateAllLEDs();
- }
-
- void loop() {
-  bool button = digitalRead(BUTTON_PIN);
-  
-  // Button pressed
-  if (button == LOW && lastButton == HIGH) {
-    pressTime = millis();
-  }
-  
-  // Button released
-  if (button == HIGH && lastButton == LOW) {
-    unsigned long holdTime = millis() - pressTime;
-    
-    if (holdTime < 500) {
-      // Short press: change mode
-      mode = (mode + 1) % 6;
-      if (mode == 0) mode = 1;  // Skip off mode when cycling
-      Serial.print("Mode: ");
-      Serial.println(mode);
-      updateAllLEDs();
-    } else {
-      // Long press: change brightness
-      brightness += 80;
-      if (brightness > 255) brightness = 30;
-      strip.setBrightness(brightness);
-      Serial.print("Brightness: ");
-      Serial.println(brightness);
-      updateAllLEDs();
+    void setup() {
+      pinMode(LED_PIN, OUTPUT);
+      pinMode(BUTTON_PIN, INPUT_PULLUP);
+      Serial.begin(115200);
+      Serial.println("Button and LED Control Test");
     }
-  }
-  
-  lastButton = button;
-  
-  // Run animations for mode 4 and 5
-  if (mode == 4 || mode == 5) {
-    runSimpleAnimation();
-  }
-  
-  delay(10);
- }
 
- void updateAllLEDs() {
-  strip.clear();
-  
-  if (mode == 0) {
-    // All off
-    for (int i = 0; i < LED_COUNT; i++) {
-      strip.setPixelColor(i, 0, 0, 0);
-    }
-  }
-  else if (mode == 1) {
-    // All red
-    for (int i = 0; i < LED_COUNT; i++) {
-      strip.setPixelColor(i, 255, 0, 0);
-    }
-  }
-  else if (mode == 2) {
-    // All green
-    for (int i = 0; i < LED_COUNT; i++) {
-      strip.setPixelColor(i, 0, 255, 0);
-    }
-  }
-  else if (mode == 3) {
-    // All blue
-    for (int i = 0; i < LED_COUNT; i++) {
-      strip.setPixelColor(i, 0, 0, 255);
-    }
-  }
-  else if (mode == 4) {
-    // Rainbow (will be animated)
-    return;
-  }
-  else if (mode == 5) {
-    // Chase effect (will be animated)
-    return;
-  }
-  
-  strip.show();
- }
-
- void runSimpleAnimation() {
-  strip.clear();
-  animationStep++;
-  
-  if (mode == 4) {
-    // Rainbow animation
-    for (int i = 0; i < LED_COUNT; i++) {
-      int hue = (animationStep * 10 + i * 30) % 360;
-      hue = hue * 65536L / 360;
-      strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(hue, 255, brightness)));
-    }
-  }
-  else if (mode == 5) {
-    // Chase animation
-    for (int i = 0; i < LED_COUNT; i++) {
-      if ((i + animationStep) % 3 == 0) {
-        strip.setPixelColor(i, 255, 0, 0);
-      } else if ((i + animationStep) % 3 == 1) {
-        strip.setPixelColor(i, 0, 255, 0);
+    void loop() {
+      if (digitalRead(BUTTON_PIN) == LOW) {
+        digitalWrite(LED_PIN, HIGH);
+        Serial.println("Button pressed - LED ON");
       } else {
-        strip.setPixelColor(i, 0, 0, 255);
+        digitalWrite(LED_PIN, LOW);
+        Serial.println("Button released - LED OFF");
+      }
+      delay(100);
+    }
+
+----
+
+Achieved Effect
+~~~~~~~~~~~~~~~~
+
+ - Press the button to turn on the LED, release to turn it off, demonstrating digital input reading and output control.
+
+----
+
+3. Servo Motor Control
+----------------------
+
+Wiring diagram
+~~~~~~~~~~~~~~
+
+.. image:: _static/course/3.servo_control.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+- Servo Signal —— ESP8266 D1 (GPIO5)
+- Servo Power —— 5V
+- Servo Ground —— GND
+
+----
+
+Example code
+~~~~~~~~~~~~
+
+.. code-block:: cpp
+
+    // Servo Motor Control
+    #include <Servo.h>
+
+    #define SERVO_PIN 5  // GPIO5 (D1)
+    Servo myServo;
+
+    void setup() {
+      myServo.attach(SERVO_PIN);
+      Serial.begin(115200);
+      Serial.println("Servo Control Test");
+    }
+
+    void loop() {
+      // Sweep from 0 to 180 degrees
+      for (int angle = 0; angle <= 180; angle += 10) {
+        myServo.write(angle);
+        Serial.print("Angle: ");
+        Serial.println(angle);
+        delay(500);
+      }
+
+      // Sweep back from 180 to 0 degrees
+      for (int angle = 180; angle >= 0; angle -= 10) {
+        myServo.write(angle);
+        Serial.print("Angle: ");
+        Serial.println(angle);
+        delay(500);
       }
     }
-  }
-  
-  strip.show();
-  delay(100);
- }
+
 ----
 
 Achieved Effect
 ~~~~~~~~~~~~~~~~
 
- - Press the button, and the RGB lights will switch between different lighting effects.
+ - The servo motor sweeps from 0° to 180° and back, demonstrating PWM control for precise angular positioning.
 
 ----
 
-
-4. Single ToneGenerator
------------------------
+4. Ultrasonic Distance Measurement
+----------------------------------
 
 Wiring diagram
 ~~~~~~~~~~~~~~
 
-.. image:: _static/course/2.course.png
+.. image:: _static/course/4.ultrasonic.png
    :width: 800
    :align: center
 
 .. raw:: html
 
    <div style="margin-top: 30px;"></div>
-  
 
-- RGB —— ESP32 IO15
-- Button —— ESP32 IO5
-- Speaker —— ESP32 IO33
+- HC-SR04 VCC —— 5V
+- HC-SR04 Trig —— ESP8266 D1 (GPIO5)
+- HC-SR04 Echo —— ESP8266 D2 (GPIO4)
+- HC-SR04 GND —— GND
+
+----
+
+Example code
+~~~~~~~~~~~~
+
+.. code-block:: cpp
+
+    // Ultrasonic Distance Measurement
+    #define TRIG_PIN 5  // GPIO5 (D1)
+    #define ECHO_PIN 4  // GPIO4 (D2)
+
+    void setup() {
+      pinMode(TRIG_PIN, OUTPUT);
+      pinMode(ECHO_PIN, INPUT);
+      Serial.begin(115200);
+      Serial.println("Ultrasonic Distance Sensor Test");
+    }
+
+    void loop() {
+      // Send trigger pulse
+      digitalWrite(TRIG_PIN, LOW);
+      delayMicroseconds(2);
+      digitalWrite(TRIG_PIN, HIGH);
+      delayMicroseconds(10);
+      digitalWrite(TRIG_PIN, LOW);
+
+      // Read echo pulse
+      long duration = pulseIn(ECHO_PIN, HIGH);
+
+      // Calculate distance
+      float distance = duration * 0.034 / 2;
+
+      Serial.print("Distance: ");
+      Serial.print(distance);
+      Serial.println(" cm");
+
+      delay(500);
+    }
+
+----
+
+Achieved Effect
+~~~~~~~~~~~~~~~~
+
+ - The ultrasonic sensor measures distance and displays it in the serial monitor, demonstrating non-contact ranging.
+
+----
+
+5. Infrared Remote Control
+--------------------------
+
+Wiring diagram
+~~~~~~~~~~~~~~
+
+.. image:: _static/course/5.ir_receiver.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+- IR Receiver VCC —— 3.3V
+- IR Receiver GND —— GND
+- IR Receiver OUT —— ESP8266 D1 (GPIO5)
+
+----
+
+Example code
+~~~~~~~~~~~~
+
+.. code-block:: cpp
+
+    // Infrared Remote Control
+    #include <IRremoteESP8266.h>
+    #include <IRrecv.h>
+    #include <IRutils.h>
+
+    #define IR_RECV_PIN 5  // GPIO5 (D1)
+    IRrecv irrecv(IR_RECV_PIN);
+    decode_results results;
+
+    void setup() {
+      Serial.begin(115200);
+      irrecv.enableIRIn();
+      Serial.println("IR Receiver Test");
+    }
+
+    void loop() {
+      if (irrecv.decode(&results)) {
+        Serial.print("IR Code: ");
+        serialPrintUint64(results.value, HEX);
+        Serial.println();
+
+        irrecv.resume();
+      }
+      delay(100);
+    }
+
+----
+
+Achieved Effect
+~~~~~~~~~~~~~~~~
+
+ - Point an IR remote at the receiver and press buttons; the hex codes are displayed in the serial monitor.
+
+----
+
+.. _Quadruped Spider Robot:
+
+6. Quadruped Spider Robot Control
+---------------------------------
+
+Wiring diagram
+~~~~~~~~~~~~~~
+
+.. image:: _static/course/6.spider_robot.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+- Servo1 (Front Left Hip) —— ESP8266 D1 (GPIO5)
+- Servo2 (Front Left Knee) —— ESP8266 D2 (GPIO4)
+- Servo3 (Front Right Hip) —— ESP8266 D3 (GPIO0)
+- Servo4 (Front Right Knee) —— ESP8266 D4 (GPIO2)
+- Servo5 (Rear Left Hip) —— ESP8266 D5 (GPIO14)
+- Servo6 (Rear Left Knee) —— ESP8266 D6 (GPIO12)
+- Servo7 (Rear Right Hip) —— ESP8266 D7 (GPIO13)
+- Servo8 (Rear Right Knee) —— ESP8266 D8 (GPIO15)
+- HC-SR04 Trig —— ESP8266 D1 (shared with Servo1)
+- HC-SR04 Echo —— ESP8266 D2 (shared with Servo2)
+- IR Receiver OUT —— ESP8266 D3 (shared with Servo3)
+
+----
+
+Example code
+~~~~~~~~~~~~
+
+.. code-block:: cpp
+
+    // Quadruped Spider Robot Control
+    #include <Servo.h>
+    #include <IRremoteESP8266.h>
+    #include <IRrecv.h>
+    #include <IRutils.h>
+
+    // Servo pins
+    #define SERVO_FL_HIP 5   // Front Left Hip
+    #define SERVO_FL_KNEE 4  // Front Left Knee
+    #define SERVO_FR_HIP 0   // Front Right Hip
+    #define SERVO_FR_KNEE 2  // Front Right Knee
+    #define SERVO_RL_HIP 14  // Rear Left Hip
+    #define SERVO_RL_KNEE 12 // Rear Left Knee
+    #define SERVO_RR_HIP 13  // Rear Right Hip
+    #define SERVO_RR_KNEE 15 // Rear Right Knee
+
+    // Sensor pins
+    #define TRIG_PIN 5       // Shared with SERVO_FL_HIP
+    #define ECHO_PIN 4       // Shared with SERVO_FL_KNEE
+    #define IR_RECV_PIN 0    // Shared with SERVO_FR_HIP
+
+    Servo servos[8];
+    int servoPins[8] = {SERVO_FL_HIP, SERVO_FL_KNEE, SERVO_FR_HIP, SERVO_FR_KNEE,
+                       SERVO_RL_HIP, SERVO_RL_KNEE, SERVO_RR_HIP, SERVO_RR_KNEE};
+
+    // Default standing positions
+    int standAngles[8] = {90, 90, 90, 90, 90, 90, 90, 90};
+
+    IRrecv irrecv(IR_RECV_PIN);
+    decode_results results;
+
+    void setup() {
+      Serial.begin(115200);
+
+      // Attach servos
+      for (int i = 0; i < 8; i++) {
+        servos[i].attach(servoPins[i]);
+        servos[i].write(standAngles[i]);
+      }
+
+      // Setup ultrasonic sensor
+      pinMode(TRIG_PIN, OUTPUT);
+      pinMode(ECHO_PIN, INPUT);
+
+      // Setup IR receiver
+      irrecv.enableIRIn();
+
+      Serial.println("Quadruped Spider Robot Ready");
+      delay(1000);
+    }
+
+    void loop() {
+      // Check IR commands
+      if (irrecv.decode(&results)) {
+        handleIRCommand(results.value);
+        irrecv.resume();
+      }
+
+      // Check distance for obstacle avoidance
+      float distance = getDistance();
+      if (distance < 20.0) {
+        // Obstacle detected - stop and turn
+        stopMovement();
+        delay(500);
+        turnRight();
+      } else {
+        // Normal walking
+        walkForward();
+      }
+
+      delay(100);
+    }
+
+    void handleIRCommand(unsigned long code) {
+      switch (code) {
+        case 0xFF629D: // Forward
+          walkForward();
+          break;
+        case 0xFFA857: // Backward
+          walkBackward();
+          break;
+        case 0xFF22DD: // Left
+          turnLeft();
+          break;
+        case 0xFFC23D: // Right
+          turnRight();
+          break;
+        case 0xFF02FD: // Stop
+          stopMovement();
+          break;
+      }
+    }
+
+    float getDistance() {
+      digitalWrite(TRIG_PIN, LOW);
+      delayMicroseconds(2);
+      digitalWrite(TRIG_PIN, HIGH);
+      delayMicroseconds(10);
+      digitalWrite(TRIG_PIN, LOW);
+
+      long duration = pulseIn(ECHO_PIN, HIGH);
+      return duration * 0.034 / 2;
+    }
+
+    void walkForward() {
+      // Simplified walking sequence
+      // Lift front left and rear right
+      servos[0].write(60);  // FL Hip
+      servos[1].write(60);  // FL Knee
+      servos[6].write(120); // RR Hip
+      servos[7].write(120); // RR Knee
+      delay(200);
+
+      // Move forward
+      servos[0].write(120);
+      servos[1].write(90);
+      servos[6].write(60);
+      servos[7].write(90);
+      delay(200);
+
+      // Lower
+      servos[0].write(90);
+      servos[1].write(90);
+      servos[6].write(90);
+      servos[7].write(90);
+      delay(200);
+
+      // Repeat for other legs
+      // (Simplified - full walking would alternate all legs)
+    }
+
+    void walkBackward() {
+      // Similar to forward but reversed
+      // Implementation would mirror walkForward with opposite directions
+    }
+
+    void turnLeft() {
+      // Turn left by rotating legs
+      servos[0].write(60);  // FL Hip
+      servos[2].write(120); // FR Hip
+      servos[4].write(60);  // RL Hip
+      servos[6].write(120); // RR Hip
+      delay(300);
+      resetToStand();
+    }
+
+    void turnRight() {
+      // Turn right
+      servos[0].write(120); // FL Hip
+      servos[2].write(60);  // FR Hip
+      servos[4].write(120); // RL Hip
+      servos[6].write(60);  // RR Hip
+      delay(300);
+      resetToStand();
+    }
+
+    void stopMovement() {
+      resetToStand();
+    }
+
+    void resetToStand() {
+      for (int i = 0; i < 8; i++) {
+        servos[i].write(standAngles[i]);
+      }
+    }
+
+----
+
+Achieved Effect
+~~~~~~~~~~~~~~~~
+
+:ref:`Quadruped Spider Robot User Guide`
+
+----
+
+Extended code
+~~~~~~~~~~~~
+
+ - You can modify the walking sequences to create different gaits (walk, trot, gallop).
+ - Add more IR commands for different movements or speeds.
+ - Implement autonomous navigation using the ultrasonic sensor for obstacle avoidance.
+ - Add battery monitoring and low-power sleep modes.
+
+.. note::
+
+ - Ensure servos are properly calibrated and powered with adequate current.
+ - Test each component individually before integrating into the full robot.
+ - Use appropriate delays to prevent servo burnout and ensure smooth movement.
+
 ----
 
 Example code
