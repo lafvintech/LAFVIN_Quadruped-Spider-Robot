@@ -6,7 +6,7 @@ LAFVIN Quadruped Spider Robot
    :caption: 📘 Basic content
 
    Introduction
-   ProgrammingProgram
+   Programmingprogram
    FrequentlyAskedQuestions
 
 
