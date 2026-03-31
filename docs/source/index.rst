@@ -1,5 +1,5 @@
-ESP32 DIY Electronic Piano
-=========================
+LAFVIN Quadruped Spider Robot
+=============================
 
 .. toctree::
    :maxdepth: 2

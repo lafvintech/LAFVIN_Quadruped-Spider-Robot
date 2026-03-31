@@ -1,4 +1,4 @@
-**Dear maker friends, welcome to the learning world of the ESP32 DIY Electronic Piano!**
+**Dear maker friends, welcome to the learning world of the LAFVIN Quadruped Spider Robot!**
 
 **Please read this documentation carefully. If you encounter any problems during use, please contact our after-sales support team, and we will assist you as soon as possible.**
 
