@@ -34,6 +34,10 @@ A. Click here to open the LAFVIN ESP Web Tool: `LAFVIN ESP Web Tool <https://laf
    :width: 800
    :align: center
 
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 B. Select the corresponding program for burning according to the image below.
 
 C. Click **CONNCE**, and in the pop-up window, select the corresponding port to connect.
@@ -42,17 +46,29 @@ C. Click **CONNCE**, and in the pop-up window, select the corresponding port to 
    :width: 800
    :align: center
 
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 D. Click **FLASH** to start the burning process.
 
 .. image:: _static/program/5.LAFVIN.png
    :width: 800
    :align: center
 
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 E. Waiting for the burning process to complete.
 
 .. image:: _static/program/6.lafvin.png
    :width: 800
    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
 
 F. After the program is burned, press the RST reset button on the development board and the system will start running.
 
