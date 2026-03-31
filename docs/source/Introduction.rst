@@ -4,7 +4,7 @@
 
 ----
 
-**ESP32 DIY Electronic Piano**
+**LAFVIN Quadruped Spider Robot**
 
 .. image:: _static/4.piano.png
    :width: 800

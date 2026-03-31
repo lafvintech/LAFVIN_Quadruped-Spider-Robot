@@ -1,5 +1,5 @@
 # -- Project information -----------------------------------------------------
-project = 'ESP32 DIY Electronic Piano'
+project = 'LAFVIN_Quadruped Spider Robot'
 copyright = '2026, Lafvin'
 author = 'Lafvin'
 
