@@ -106,7 +106,7 @@ Ultrasonic Distance Sensor
 
    <div style="margin-top: 30px;"></div>
 
-The **HC-SR04** is a popular ultrasonic ranging sensor that uses sound waves to measure distance. It provides accurate, non-contact distance measurement, making it perfect for obstacle detection and navigation in robotics applications like the spider robot.
+The **HC-SR04 Ultrasonic Distance Sensor** is a popular ultrasonic ranging sensor that uses sound waves to measure distance. It provides accurate, non-contact distance measurement, making it perfect for obstacle detection and navigation in robotics applications like the spider robot.
 
 **Key Specifications:**
 
