@@ -10,15 +10,15 @@ Assembly Video
 
 ----
 
-Wiring Diagram
---------------
+Assembly Tutorial
+-------------------
 
-MG90S Servo Wiring
-~~~~~~~~~~~~~~~~~~
+STEP 1: Assemble expansion board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The MG90S servo motors are crucial components for controlling the robot's leg movements. Each servo has three wires with specific colors and functions:
+**Parts list：** Expansion board、Acrylic body panel、M3*10mm screw (4PCS)、M3*16mm copper pillar (4PCS).
 
-.. image:: _static/AssemblyTutorial/1.servo.png
+.. image:: _static/AssemblyTutorial/2.8266.png
    :width: 800
    :align: center
 
@@ -26,10 +26,23 @@ The MG90S servo motors are crucial components for controlling the robot's leg mo
 
    <div style="margin-top: 30px;"></div>
 
-- **Brown/Black Wire**: Ground (GND) - Connect to the ground pin on the expansion board
-- **Red Wire**: Power (VCC) - Connect to the 5V power pin on the expansion board
-- **Orange/Yellow Wire**: Signal (PWM) - Connect to the corresponding GPIO pin on the ESP8266 board
+----
 
-The quadruped spider robot uses 8 MG90S servos total - 2 per leg (hip and knee joints). Proper wiring ensures smooth and precise movement control.
+STEP 2: Assemble development board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Parts list：** Esp8266 development board.
+
+.. image:: _static/AssemblyTutorial/3.8266.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. note::
+
+   Ensure the development board orientation matches the silk-screen markings on the expansion board to avoid incorrect installation.
 
 ----
