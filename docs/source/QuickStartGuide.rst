@@ -41,33 +41,11 @@ Quick Start Guide
 2. Install Serial Port Tool
 ---------------------------
 
-This kit uses an ESP32 development board with a CH340 serial port chip. The corresponding driver needs to be installed before connecting it to the computer for the first time. If you have already installed the CH340 driver, you can skip this step and proceed directly to the next section.
+This kit uses an ESP32 development board with a CP2102 serial port chip. The corresponding driver needs to be installed before connecting it to the computer for the first time. If you have already installed the CH2102 driver, you can skip this step and proceed directly to the next section.
 
 ----
 
-In the resource folder provided by this package, locate the "CH340 driver installation package" and follow the instructions in the image below to complete the installation.
-
-.. image:: _static/install/1.CH340.png
-   :width: 800
-   :align: center
-
-.. raw:: html
-
-   <div style="margin-top: 30px;"></div>
-
-.. image:: _static/install/2.CH340.png
-   :width: 800
-   :align: center
-
-----
-
-After installation, please connect the ESP32 development board to your computer using a Type-C data cable and check in Device Manager whether the serial port is successfully recognized（as shown in the image below）. If it is not recognized, please try changing the USB port or reinstalling the driver.
-
-.. image:: _static/install/3.CH340.png
-   :width: 800
-   :align: center
-
-----
+`Click here to access the official driver download page <https://www.silabs.com/software-and-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads>`_
 
 3. Install Flash Download Tool
 ------------------------------
