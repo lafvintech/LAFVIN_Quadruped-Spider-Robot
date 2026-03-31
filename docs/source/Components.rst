@@ -24,7 +24,15 @@ The **ESP8266** is a low-cost, highly integrated Wi-Fi microcontroller system-on
 
 The ESP8266 operates based on a Xtensa processor core with an integrated Wi-Fi radio (MAC and PHY). It supports both STA (Station) and AP (Access Point) modes, allowing it to connect to existing networks or create its own hotspot. Programs are typically written in the Arduino IDE or MicroPython environment and burned into the onboard flash memory via USB-to-UART bridge (CP2102 in this kit). Upon reset, the bootloader loads the firmware from flash and executes the user program.
 
-**Pin Mapping:**
+----
+
+
+Quadruped Spider Robot Expansion Board
+--------------------------------------
+
+The Quadruped Spider Robot Expansion Board is specifically designed for this kit. It features an onboard battery compartment and charging functionality, along with multiple circuit protection designs including reverse polarity protection and fuses. It also includes large capacitors to enhance system stability and instantaneous response capability, ensuring smooth and reliable servo operation. Additionally, it extends the ESP8266 development board's pins for easy wiring.
+
+The following is a pinout diagram of the expansion board and the ESP8266 development board:
 
 .. list-table:: ESP8266 Digital Pin to GPIO Mapping
    :header-rows: 1
@@ -52,11 +60,6 @@ The ESP8266 operates based on a Xtensa processor core with an integrated Wi-Fi r
 
 ----
 
-
-Quadruped Spider Robot Expansion Board
---------------------------------------
-
-The Quadruped Spider Robot Expansion Board is specifically designed for this kit. It features an onboard battery compartment and charging functionality, along with multiple circuit protection designs including reverse polarity protection and fuses. It also includes large capacitors to enhance system stability and instantaneous response capability, ensuring smooth and reliable servo operation. Additionally, it extends the ESP8266 development board's pins for easy wiring.
-
-以下是扩展板与ESP8266开发板的引脚对应图：
+MG90S servo
+-----------
 
