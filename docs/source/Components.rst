@@ -64,3 +64,33 @@ The following is a pinout diagram of the expansion board and the ESP8266 develop
 MG90S servo
 -----------
 
+The **MG90S** is a small, lightweight servo motor widely used in robotics and RC applications. It features high torque, fast response time, and precise angle control, making it ideal for driving the legs of the spider robot in this kit.
+
+**Operating Principle:**
+
+The MG90S is controlled via PWM signals. The pulse width (duration of the high signal) determines the servo position:
+
+- **1.0 ms pulse**: 0° (full counterclockwise)
+- **1.5 ms pulse**: 90° (neutral/center position)
+- **2.0 ms pulse**: 180° (full clockwise)
+- **Frequency**: 50 Hz (20 ms period)
+
+.. image:: _static/Component/1.MG90.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+When the ESP8266 sends a PWM signal to the servo via the expansion board, the servo's internal circuitry decodes the pulse width and moves the output shaft to the corresponding angle. The servo continuously adjusts its position to match the target angle until it receives a new command.
+
+The expansion board has dedicated servo ports that simplify wiring and provide stable power distribution to ensure smooth servo operation.
+
+**Common Applications in Spider Robot:**
+
+- Driving the four legs through hip, knee, and ankle joints
+- Independent control of each servo allows the robot to move in different directions
+- Synchronized servo control enables walking, turning, and dynamic movements
+
+----
