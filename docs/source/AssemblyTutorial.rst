@@ -101,12 +101,20 @@ The wiring diagram for the servo motors in the body is shown in the figure：
 
 Image of the assembled spider body parts:
 
- .. image:: _static/AssemblyTutorial/5.body.png
+ .. image:: _static/AssemblyTutorial/6.bodycom.png
    :width: 800
    :align: center
 
  .. raw:: html
 
    <div style="margin-top: 30px;"></div>
+
+----
+
+.. raw:: html
+
+   <div style="background-color: orange; padding: 10px; border: 1px solid #ccc; margin: 10px 0;">
+   <strong>Important:</strong> After connecting the servos to the body, install the battery while ensuring the development board is properly mounted on the expansion board. Then, turn on the power of the expansion board. The system will automatically reset, and the servos will rotate to their initial positions.
+   </div>
 
 ----
