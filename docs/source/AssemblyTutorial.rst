@@ -156,6 +156,9 @@ To ensure smooth movement of the spider robot, please trim the servo arms to the
 
 ----
 
-STEP 7: Trim swing arm
-~~~~~~~~~~~~~~~~~~~~~~~
+STEP 7: Assemble the thigh and femur
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Parts list：** The thigh of the assembled swing arm  (8 PCS),
+
 
