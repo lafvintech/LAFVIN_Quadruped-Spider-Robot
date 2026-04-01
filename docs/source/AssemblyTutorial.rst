@@ -113,9 +113,11 @@ STEP 4: Wiring of the body servo
 
 .. raw:: html
 
-   <div style="background-color: orange; padding: 10px; border: 1px solid #ccc; margin: 10px 0;">
-   <strong>Important:</strong> After connecting the servos to the body, install the battery while ensuring the development board is properly mounted on the expansion board. Then, turn on the power of the expansion board. The system will automatically reset, and the servos will rotate to their initial positions. <strong>Note:</strong> The development board must be programmed before this step; otherwise, the servo will not respond. For instructions, see :ref:`\`Programming Program\``.
-   </div>
+.. note::
+
+  - After connecting the servos to the body, install the battery while ensuring the development board is properly mounted on the expansion board. Then, turn on the power of the expansion board. The system will automatically reset, and the servos will rotate to their initial positions. 
+  
+  - The development board must be programmed before this step; otherwise, the servo will not respond. For instructions,see :ref:`Programming Programl`.
 
 ----
 

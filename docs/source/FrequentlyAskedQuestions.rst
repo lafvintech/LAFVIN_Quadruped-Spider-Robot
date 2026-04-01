@@ -15,7 +15,7 @@ Frequently Asked Questions
 
 **2.The ESP32 development board is not recognized or the program cannot be burned.**
 
- - Please make sure the CH340 driver is correctly installed on your computer.Click here to view the installation tutorial. :ref:`Install Serial Port Tool` 
+ - Please make sure the CH340 driver is correctly installed on your computer.Click here to view the installation tutorial. :ref:`Programming Program` 
 
  - Use a Type-C data cable （make sure it supports data transmission, not just charging）.
 
