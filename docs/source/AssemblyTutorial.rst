@@ -117,7 +117,7 @@ STEP 4: Wiring of the body servo
 
   - After connecting the servos to the body, install the battery while ensuring the development board is properly mounted on the expansion board. Then, turn on the power of the expansion board. The system will automatically reset, and the servos will rotate to their initial positions. 
   
-  - The development board must be programmed before this step; otherwise, the servo will not respond. For instructions,see :ref:`Programming Programl`.
+  - The development board must be programmed before this step; otherwise, the servo will not respond. For instructions,see :ref:`Programming Program`.
 
 ----
 
