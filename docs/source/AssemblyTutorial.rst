@@ -50,7 +50,7 @@ STEP 2: Assemble development board
 STEP 3: Assemble  body servo 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** MG90S Servo (4PCS)、M2*10mm screw (8PCS) M2 nut(8PCS).
+**Parts list：** MG90S Servo (4PCS)、M2*10mm screw (8PCS)、M2 nut(8PCS).
 
 .. image:: _static/AssemblyTutorial/4.BODYSERVO.png
    :width: 800
@@ -69,6 +69,23 @@ STEP 3: Assemble  body servo
 STEP 4: Wiring of the body servo  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+ The MG90S servo motors are crucial components for controlling the robot's leg movements. Each servo has three wires with specific colors and functions:
+
+ .. image:: _static/AssemblyTutorial/1.servo.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+ - **Brown Wire**: Ground (GND) - Connect to the ground pin on the expansion board
+ - **Red Wire**: Power (VCC) - Connect to the 5V power pin on the expansion board
+ - **Yellow Wire**: Signal (PWM) - Connect to the corresponding GPIO pin on the ESP8266 board
+
+----
 
 
 
