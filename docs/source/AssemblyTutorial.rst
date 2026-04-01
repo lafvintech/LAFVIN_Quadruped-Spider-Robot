@@ -165,7 +165,7 @@ STEP 7: Assemble the thigh and femur
 
    The femoral plates consist of two groups with different orientations. Each group contains 2 pieces, for a total of 4 pieces. Continue reading below for detailed assembly instructions.
 
-The assembly of the first group is shown in the figure:
+**The assembly of the first group is shown in the figure:**
 
  .. image:: _static/AssemblyTutorial/9.摆臂安装支架1-1.png
    :width: 800
@@ -182,5 +182,7 @@ The assembly of the first group is shown in the figure:
  .. raw:: html
 
    <div style="margin-top: 30px;"></div>
-   
+
 ----
+
+**The assembly of the second group is shown in the figure:**
