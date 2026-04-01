@@ -50,7 +50,7 @@ STEP 2: Assemble development board
 STEP 3: Assemble  body servo 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** MG90S Servo (4 PCS)、M2*10mm screw (8 PCS)、M2 nut (8 PCS).
+**Parts list：** MG90S Servo (4 PCS)、M2*12mm screw (8 PCS)、M2 nut (8 PCS).
 
 .. image:: _static/AssemblyTutorial/4.BODYSERVO.png
    :width: 800
@@ -159,6 +159,28 @@ To ensure smooth movement of the spider robot, please trim the servo arms to the
 STEP 7: Assemble the thigh and femur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** The thigh of the assembled swing arm  (8 PCS),
+**Parts list：** The thigh of the assembled swing arm  (8 PCS)、Femoral acrylic plate (4 PCS)、M3*10mm screw (8 PCS)、M3 Nut (8 PCS).
 
+.. attention::
 
+   The femoral plates consist of two groups with different orientations. Each group contains 2 pieces, for a total of 4 pieces. Continue reading below for detailed assembly instructions.
+
+The assembly of the first group is shown in the figure:
+
+ .. image:: _static/AssemblyTutorial/9.摆臂安装支架1-1.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+ .. image:: _static/AssemblyTutorial/10.摆臂安装支架1-2.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+   
+----
