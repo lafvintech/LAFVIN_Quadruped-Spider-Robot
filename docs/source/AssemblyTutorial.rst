@@ -87,6 +87,26 @@ STEP 4: Wiring of the body servo
 
 ----
 
+The wiring diagram for the servo motors in the body is shown in the figure：
 
+ .. image:: _static/AssemblyTutorial/5.body.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
+Image of the assembled spider body parts:
+
+ .. image:: _static/AssemblyTutorial/5.body.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
 
 ----
