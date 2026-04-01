@@ -16,7 +16,7 @@ Assembly Tutorial
 STEP 1: Assemble expansion board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** Expansion board、Acrylic body panel、M3*10mm screw (4PCS)、M3*16mm copper pillar (4PCS).
+**Parts list：** Expansion board、Acrylic body panel、M3*10mm screw (4 PCS)、M3*16mm copper pillar (4 PCS).
 
 .. image:: _static/AssemblyTutorial/2.8266.png
    :width: 800
@@ -50,7 +50,7 @@ STEP 2: Assemble development board
 STEP 3: Assemble  body servo 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** MG90S Servo (4PCS)、M2*10mm screw (8PCS)、M2 nut(8PCS).
+**Parts list：** MG90S Servo (4 PCS)、M2*10mm screw (8 PCS)、M2 nut (8 PCS).
 
 .. image:: _static/AssemblyTutorial/4.BODYSERVO.png
    :width: 800
@@ -87,7 +87,7 @@ STEP 4: Wiring of the body servo
 
 ----
 
-The wiring diagram for the servo motors in the body is shown in the figure：
+**The wiring diagram for the servo motors in the body is shown in the figure:**
 
  .. image:: _static/AssemblyTutorial/5.body.png
    :width: 800
@@ -99,7 +99,7 @@ The wiring diagram for the servo motors in the body is shown in the figure：
 
 ----
 
-Image of the assembled spider body parts:
+**Image of the assembled spider body parts:**
 
  .. image:: _static/AssemblyTutorial/6.bodycom.png
    :width: 800
@@ -118,3 +118,39 @@ Image of the assembled spider body parts:
    </div>
 
 ----
+
+STEP 5: Assemble the spider's thigh 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Parts list：** Acrylic plate for thigh (8 PCS)、One-swing arm (8 PCS)、M2*8mm self-tapping screw (16 PCS).
+
+ .. image:: _static/AssemblyTutorial/7.baibi.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. note::
+
+ - The one-swing arm and M2*8mm self-tapping screws used in this step are all included in the servo package.
+ - A total of 8 need to be installed for use in subsequent steps.
+
+----
+
+STEP 6: Trim swing arm
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To ensure smooth movement of the spider robot, please trim the servo arms to the appropriate length as shown in the diagram. Please handle with care during operation.
+
+ .. image:: _static/AssemblyTutorial/8.xiujian.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
