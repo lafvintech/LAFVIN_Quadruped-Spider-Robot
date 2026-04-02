@@ -165,6 +165,7 @@ STEP 7: Assemble the thigh and femur
 
    The femoral plates consist of two groups with different orientations. Each group contains 2 pieces, for a total of 4 pieces. Continue reading below for detailed assembly instructions.
 
+
 **The assembly of the first group is shown in the figure:**
 
  .. image:: _static/AssemblyTutorial/9.摆臂安装支架1-1.png
@@ -183,7 +184,6 @@ STEP 7: Assemble the thigh and femur
 
    <div style="margin-top: 30px;"></div>
 
-----
 
 **The assembly of the second group is shown in the figure:**
 
@@ -203,7 +203,6 @@ STEP 7: Assemble the thigh and femur
 
    <div style="margin-top: 30px;"></div>
 
-----
 
 **The differences between the two different assembly methods are shown in the following figure.**
 
@@ -219,3 +218,38 @@ STEP 8: Assemble Tibia
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 **Parts list：** MG90S Servo(4 PCS)、Tibial acrylic plate(4 PCS)、M2*12mm screw(8 PCS)、M2 Nut(8 PCS)
+
+.. attention::
+
+  Assembling the servo motors to the tibia is also done in two groups with different orientations, two in each group. This step requires assembling a total of four tibias.
+
+**The first set of tibias is installed as shown in the figure.**
+
+ .. image:: _static/AssemblyTutorial/14.tibia1.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+
+**The second set of tibias is installed as shown in the figure.**
+
+ .. image:: _static/AssemblyTutorial/15.tibia2.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+**Completed assembly of two sets of tibias:**
+
+ .. image:: _static/AssemblyTutorial/16.tibia3.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
