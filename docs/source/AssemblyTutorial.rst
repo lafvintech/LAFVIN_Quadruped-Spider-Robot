@@ -253,3 +253,49 @@ STEP 8: Assemble Tibia
  .. raw:: html
 
    <div style="margin-top: 30px;"></div>
+  
+----
+
+STEP 9: Assemble the tibia and femur
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. attention::
+
+  Tibia and femur assembly is also divided into two different assembly directions, with two in each group, requiring the assembly of four bones per group.
+
+**The first group of tibia and femur assembly is shown in the figure.**
+
+ .. image:: _static/AssemblyTutorial/17.触角1.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+  
+**The second group of tibia and femur assembly is shown in the figure.**
+
+ .. image:: _static/AssemblyTutorial/18.触角2.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+**The completed results of the two groups of tibia and femur are shown in the figure.**
+
+ .. image:: _static/AssemblyTutorial/19.触角3.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
+STEP 9: Servo connected to the tibia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
