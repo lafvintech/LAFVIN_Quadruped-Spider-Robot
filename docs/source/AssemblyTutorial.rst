@@ -69,7 +69,7 @@ STEP 3: Assemble  body servo
 STEP 4: Wiring of the body servo  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
+.. attention::
 
  The MG90S servo motors are crucial components for controlling the robot's leg movements. Each servo has three wires with specific colors and functions:
 
@@ -113,7 +113,7 @@ STEP 4: Wiring of the body servo
 
 .. raw:: html
 
-.. note::
+.. attention::
 
   - After connecting the servos to the body, install the battery while ensuring the development board is properly mounted on the expansion board. Then, turn on the power of the expansion board. The system will automatically reset, and the servos will rotate to their initial positions. 
   
@@ -265,7 +265,7 @@ STEP 9: Assemble the tibia and femur
 
 **The first group of tibia and femur assembly is shown in the figure.**
 
- .. image:: _static/AssemblyTutorial/17.触角1.png
+ .. image:: _static/AssemblyTutorial/17.触脚1.png
    :width: 800
    :align: center
 
@@ -275,7 +275,7 @@ STEP 9: Assemble the tibia and femur
   
 **The second group of tibia and femur assembly is shown in the figure.**
 
- .. image:: _static/AssemblyTutorial/18.触角2.png
+ .. image:: _static/AssemblyTutorial/18.触脚2.png
    :width: 800
    :align: center
 
