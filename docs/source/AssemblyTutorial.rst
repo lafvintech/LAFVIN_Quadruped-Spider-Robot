@@ -16,7 +16,7 @@ Assembly Tutorial
 STEP 1: Assemble expansion board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** Expansion board、Acrylic body panel、M3*10mm screw (4 PCS)、M3*16mm copper pillar (4 PCS).
+**Parts list：** Expansion board、Acrylic body panel、M3*10mm screw(4 PCS)、M3*16mm copper pillar(4 PCS).
 
 .. image:: _static/AssemblyTutorial/2.8266.png
    :width: 800
@@ -50,7 +50,7 @@ STEP 2: Assemble development board
 STEP 3: Assemble  body servo 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** MG90S Servo (4 PCS)、M2*12mm screw (8 PCS)、M2 nut (8 PCS).
+**Parts list：** MG90S Servo(4 PCS)、M2*12mm screw(8 PCS)、M2 nut(8 PCS).
 
 .. image:: _static/AssemblyTutorial/4.BODYSERVO.png
    :width: 800
@@ -124,7 +124,7 @@ STEP 4: Wiring of the body servo
 STEP 5: Assemble the spider's thigh 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** Acrylic plate for thigh (8 PCS)、One-swing arm (8 PCS)、M2*8mm self-tapping screw (16 PCS).
+**Parts list：** Acrylic plate for thigh(8 PCS)、One-swing arm(8 PCS)、M2*8mm self-tapping screw(16 PCS).
 
  .. image:: _static/AssemblyTutorial/7.baibi.png
    :width: 800
@@ -159,7 +159,7 @@ To ensure smooth movement of the spider robot, please trim the servo arms to the
 STEP 7: Assemble the thigh and femur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Parts list：** The thigh of the assembled swing arm  (8 PCS)、Femoral acrylic plate (4 PCS)、M3*10mm screw (8 PCS)、M3 Nut (8 PCS).
+**Parts list：** The thigh of the assembled swing arm(8 PCS)、Femoral acrylic plate(4 PCS)、M3*10mm screw(8 PCS)、M3 Nut(8 PCS).
 
 .. attention::
 
@@ -186,3 +186,36 @@ STEP 7: Assemble the thigh and femur
 ----
 
 **The assembly of the second group is shown in the figure:**
+
+ .. image:: _static/AssemblyTutorial/11.摆臂连接支架2-1.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+ .. image:: _static/AssemblyTutorial/12.摆臂连接支架2-2.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
+**The differences between the two different assembly methods are shown in the following figure.**
+
+ .. image:: _static/AssemblyTutorial/13.qubie.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+----
+
+STEP 8: Assemble Tibia 
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**Parts list：** MG90S Servo(4 PCS)、Tibial acrylic plate(4 PCS)、M2*12mm screw(8 PCS)、M2 Nut(8 PCS)
