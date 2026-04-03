@@ -1,8 +1,8 @@
 Assembly Tutorial
 =================
 
-Assembly Video
---------------
+Video Assembly Tutorial
+-----------------------
 
 - The video provides a step-by-step assembly tutorial for the quadruped spider robot. Watching this video will help you assemble it quickly.
 
@@ -10,8 +10,8 @@ Assembly Video
 
 ----
 
-Assembly Tutorial
--------------------
+Illustrated Assembly Tutorial
+-----------------------------
 
 STEP 1: Assemble expansion board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -442,5 +442,70 @@ Servo calibration and debug
 
 ----
 
-**The servo calibration steps are as follows:**
+**Step 1: Manually adjust the servo motor**
 
+1. Each time the power switch on the expansion board is turned on, the servo will perform a reset action and rotate back to the initial position shown in the figure below.
+
+ .. image:: _static/AssemblyTutorial/28.CHUSHIWEIZHI.png
+    :width: 800
+    :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
+2. If a servo motor is not in the correct position, the incorrect femur or tibia section can be removed and manually reinstalled to a parallel position.
+
+.. attention::
+
+ During disassembly and reassembly, keep the power on and do not manually rotate the servo motor.
+
+----
+
+3. After manually adjusting all servos to a parallel position, turn off the power, turn the power back on, and check if the spider's four legs are in a parallel position after the servos automatically reset.
+
+4. If the position doesn't shift too much, no manual adjustment is needed. Next, use the app to set the offset, ensuring the four legs are as parallel as possible.
+
+5. Install the screws to secure the servo motor.
+
+----
+
+**Step 2: Adjust the servo using the APP**
+
+After manually adjusting the servo to a parallel position, you can use the servo calibration function in the APP to fine-tune the servo and make the spider achieve the best movement gait effect when moving.
+
+1. Connect the quadruped spider robot to the App. Click here for app connection and usage instructions.
+
+2. Click the top right corner of the App interface to access the servo calibration page.
+
+.. image:: _static/AssemblyTutorial/29.JZ1.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. image:: _static/AssemblyTutorial/30.JZ2.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
+3. Click "Read value" to read the current offset data for each servo.
+
+.. image:: _static/AssemblyTutorial/31.JZ3.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
