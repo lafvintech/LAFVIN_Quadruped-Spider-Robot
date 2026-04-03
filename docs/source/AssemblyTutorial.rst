@@ -387,6 +387,14 @@ STEP 14: Assemble anti-slip rubber sleeves
 
 **Because of the smooth surface of acrylic, installing anti-slip grips can help the spider walk more accurately. Please install the anti-slip grips on the four legs of the spider as shown in the picture.**
 
+.. image:: _static/AssemblyTutorial/27.JT.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 ----
 
 STEP 15: Assemble an ultrasonic distance sensor
