@@ -480,7 +480,7 @@ After manually adjusting the servo to a parallel position, you can use the servo
 
 2. Click the top right corner of the App interface to access the servo calibration page.
 
-.. image:: _static/AssemblyTutorial/29.JZ1.png
+.. image:: _static/AssemblyTutorial/29.JZ.png
     :width: 800
     :align: center
 
