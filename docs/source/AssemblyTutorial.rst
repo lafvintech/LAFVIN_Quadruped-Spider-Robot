@@ -422,19 +422,21 @@ Servo calibration and debug
 
 **To ensure proper movement and coordinated gait during operation, the servos must be calibrated according to the following steps.**
 
-- Install one 18650 battery in the battery compartment at the bottom of the expansion board, ensuring it is fully charged.
+.. note::
 
-- Please ensure that the ESP8266 development board has been programmed. For detailed programming instructions, please click here. :ref:`Programming Program`
+ - Install one 18650 battery in the battery compartment at the bottom of the expansion board, ensuring it is fully charged.
 
-- Please install the mobile control app for the quadrupedal spider robot.
+ - Please ensure that the ESP8266 development board has been programmed. For detailed programming instructions, please click here. :ref:`Programming Program`
 
-- The servo screws fixed to the femur do not need to be installed for now. If they have already been installed, please remove them first and then fix them after the servo is properly calibrated.
+ - Please install the mobile control app for the quadrupedal spider robot.
 
-.. image:: _static/AssemblyTutorial/26.notinstall.png
-   :width: 800
-   :align: center
+ - The servo screws fixed to the femur do not need to be installed for now. If they have already been installed, please remove them first and then fix them after the servo is properly calibrated.
 
-.. raw:: html
+ .. image:: _static/AssemblyTutorial/26.notinstall.png
+    :width: 800
+    :align: center
+
+ .. raw:: html
 
    <div style="margin-top: 30px;"></div>
 
