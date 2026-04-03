@@ -375,14 +375,14 @@ STEP 12: Organize the servo motor connection cables
 
 ----
 
-STEP 12: Assemble the body cover plate
+STEP 13: Assemble the body cover plate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Parts list：** Acrylic cover plate for the body、 M3*10mm screw(4 PCS)
 
 ----
 
-STEP 13: Assemble an ultrasonic distance sensor
+STEP 14: Assemble an ultrasonic distance sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Parts list：** Spider Eye Decorative Acrylic Panel、Ultrasonic distance sensor
