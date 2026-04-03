@@ -306,15 +306,11 @@ STEP 10: Tibia and femur assemble into the body
 
    <div style="margin-top: 30px;"></div>
 
-.. attention::
+.. image:: _static/AssemblyTutorial/22.chuizhi1.png
+   :width: 800
+  :align: center
 
-  - The tibia and femur need to be kept parallel.
-
-   .. image:: _static/AssemblyTutorial/22.chuizhi.png
-     :width: 800
-     :align: center
-
- .. raw:: html
+.. raw:: html
 
    <div style="margin-top: 30px;"></div>
 
