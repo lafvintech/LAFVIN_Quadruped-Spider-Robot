@@ -458,6 +458,14 @@ Servo calibration and debug
 
 2. If a servo motor is not in the correct position, the incorrect femur or tibia section can be removed and manually reinstalled to a parallel position.
 
+.. image:: _static/AssemblyTutorial/GIFTEST.gif
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 .. attention::
 
  During disassembly and reassembly, keep the power on and do not manually rotate the servo motor.
@@ -524,7 +532,9 @@ After manually adjusting the servo to a parallel position, you can use the servo
 
 5. Select a servo motor with a larger offset based on the actual situation and make corresponding adjustments.
 
-6. Adjust the servo offset by increasing or decreasing the value. After determining the value to be adjusted, first click "Save calibration", then click "Reset preview". The adjusted value will take effect, and the servo will rotate accordingly.
+----
+
+6. Adjust the servo offset by increasing or decreasing the value. After determining the value to be adjusted, first click "Save calibration", then click "Reset Preview". The adjusted value will take effect, and the servo will rotate accordingly.
 
 .. image:: _static/AssemblyTutorial/32.JZ4.png
     :width: 800
