@@ -394,7 +394,6 @@ STEP 15: Assemble an ultrasonic distance sensor
 
 **Parts list：** Spider Eye Decorative Acrylic Panel、Ultrasonic distance sensor
 
-
 ----
 
 Complete assembly result image
