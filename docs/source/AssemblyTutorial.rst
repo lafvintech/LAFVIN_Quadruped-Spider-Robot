@@ -310,9 +310,9 @@ STEP 10: Tibia and femur assemble into the body
 
   - The tibia and femur need to be kept parallel.
 
-   .. image:: _static/AssemblyTutorial/20.chuizhi.png
-   :width: 800
-   :align: center
+   .. image:: _static/AssemblyTutorial/22.chuizhi.png
+     :width: 800
+     :align: center
 
  .. raw:: html
 
