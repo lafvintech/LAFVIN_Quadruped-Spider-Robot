@@ -302,7 +302,7 @@ STEP 10: Tibia and femur assemble into the body
    :width: 800
    :align: center
 
- .. raw:: html
+.. raw:: html
 
    <div style="margin-top: 30px;"></div>
 
