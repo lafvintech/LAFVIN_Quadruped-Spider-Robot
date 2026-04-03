@@ -79,6 +79,19 @@ F. After the program is burned, press the RST reset button on the development bo
 
 ----
 
+.. attention::
+
+ When programming, simply connect the data cable to the ESP8266 development board; there is no need to connect it to the expansion board or any servos or ultrasonic sensors to avoid programming failure.
+
+ .. image:: _static/program/7.esp8266.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+----
+
 .. note::
    If flashing fails, please check the following:
 

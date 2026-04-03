@@ -382,7 +382,14 @@ STEP 13: Assemble the body cover plate
 
 ----
 
-STEP 14: Assemble anti-slip rubber sleeves
+STEP 14: Assemble an ultrasonic distance sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Parts list：** Spider Eye Decorative Acrylic Panel、Ultrasonic distance sensor
+
+----
+
+STEP 15: Assemble anti-slip rubber sleeves
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Because of the smooth surface of acrylic, installing anti-slip grips can help the spider walk more accurately. Please install the anti-slip grips on the four legs of the spider as shown in the picture.**
@@ -394,13 +401,6 @@ STEP 14: Assemble anti-slip rubber sleeves
 .. raw:: html
 
    <div style="margin-top: 30px;"></div>
-
-----
-
-STEP 15: Assemble an ultrasonic distance sensor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Parts list：** Spider Eye Decorative Acrylic Panel、Ultrasonic distance sensor
 
 ----
 
