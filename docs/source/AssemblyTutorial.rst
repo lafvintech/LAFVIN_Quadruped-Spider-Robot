@@ -509,3 +509,29 @@ After manually adjusting the servo to a parallel position, you can use the servo
    <div style="margin-top: 30px;"></div>
 
 ----
+
+4. The following is an explanation of the data for adding and subtracting values ​​during servo motor adjustment.
+
+- Servo 1, 3, 5, 7 Addition: Servo rotates forward.
+
+- Servo 1, 3, 5, 7 decrement: Servo rotates backward.
+
+- Servo 2, 4,6, 8 Addition: Servo rotates downwards.
+
+- Servo 2, 4, 6, 8 decrement: Servo motors rotate upwards.
+
+----
+
+5. Select a servo motor with a larger offset based on the actual situation and make corresponding adjustments.
+
+6. Adjust the servo offset by increasing or decreasing the value. After determining the value to be adjusted, first click "Save calibration", then click "Reset preview". The adjusted value will take effect, and the servo will rotate accordingly.
+
+.. image:: _static/AssemblyTutorial/32.JZ4.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
