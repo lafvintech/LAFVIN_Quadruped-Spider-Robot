@@ -382,11 +382,56 @@ STEP 13: Assemble the body cover plate
 
 ----
 
-STEP 14: Assemble an ultrasonic distance sensor
+STEP 14: Assemble anti-slip rubber sleeves
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Because of the smooth surface of acrylic, installing anti-slip grips can help the spider walk more accurately. Please install the anti-slip grips on the four legs of the spider as shown in the picture.**
+
+----
+
+STEP 15: Assemble an ultrasonic distance sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Parts list：** Spider Eye Decorative Acrylic Panel、Ultrasonic distance sensor
 
 
 ----
+
+Complete assembly result image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/AssemblyTutorial/25.com.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
+Servo calibration and debug
+----------------------------
+
+**To ensure proper movement and coordinated gait during operation, the servos must be calibrated according to the following steps.**
+
+- Install one 18650 battery in the battery compartment at the bottom of the expansion board, ensuring it is fully charged.
+
+- Please ensure that the ESP8266 development board has been programmed. For detailed programming instructions, please click here. :ref:`Programming Program`
+
+- Please install the mobile control app for the quadrupedal spider robot.
+
+- The servo screws fixed to the femur do not need to be installed for now. If they have already been installed, please remove them first and then fix them after the servo is properly calibrated.
+
+.. image:: _static/AssemblyTutorial/26.notinstall.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
+**The servo calibration steps are as follows:**
 
