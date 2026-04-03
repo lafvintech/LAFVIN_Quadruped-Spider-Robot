@@ -295,16 +295,50 @@ STEP 9: Assemble the tibia and femur
 
 ----
 
-STEP 9: Servo connected to the tibia
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STEP 10: Tibia and femur assemble into the body
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**The servo connection on the tibia is shown in the figure.**
-
- .. image:: _static/AssemblyTutorial/20.SERVO2.png
+ .. image:: _static/AssemblyTutorial/21.servo1.png
    :width: 800
    :align: center
 
  .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. attention::
+
+  - The tibia and femur need to be kept parallel.
+
+   .. image:: _static/AssemblyTutorial/20.chuizhi.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
+
+STEP 11: Servo connected to the tibia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**The servo connection on the tibia is shown in the figure.**
+
+.. image:: _static/AssemblyTutorial/20.SERVO2.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. image:: _static/AssemblyTutorial/23.servo3.png
+   :width: 800
+   :align: center
+
+.. raw:: html
 
    <div style="margin-top: 30px;"></div>
 
