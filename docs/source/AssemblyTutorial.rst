@@ -298,7 +298,7 @@ STEP 9: Assemble the tibia and femur
 STEP 10: Tibia and femur assemble into the body
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- .. image:: _static/AssemblyTutorial/21.servo1.png
+.. image:: _static/AssemblyTutorial/21.servo1.png
    :width: 800
    :align: center
 
@@ -308,7 +308,7 @@ STEP 10: Tibia and femur assemble into the body
 
 .. image:: _static/AssemblyTutorial/22.chuizhi1.png
    :width: 800
-  :align: center
+   :align: center
 
 .. raw:: html
 
@@ -353,6 +353,40 @@ STEP 11: Servo connected to the tibia
  - **Brown Wire**: Ground (GND) - Connect to the ground pin on the expansion board
  - **Red Wire**: Power (VCC) - Connect to the 5V power pin on the expansion board
  - **Orange Wire**: Signal (PWM) - Connect to the corresponding GPIO pin on the ESP8266 board
+
+----
+
+STEP 12: Organize the servo motor connection cables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Use cable ties to organize the servo wiring harness as shown in the diagram below.**
+
+.. image:: _static/AssemblyTutorial/24.xiansu.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. note::
+
+  When securing the wiring harness with cable ties, it's necessary to leave sufficient redundancy for the servo motor to rotate, to prevent the servo motor from being unable to operate if the wiring harness is too short.
+
+----
+
+STEP 12: Assemble the body cover plate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Parts list：** Acrylic cover plate for the body、 M3*10mm screw(4 PCS)
+
+----
+
+STEP 13: Assemble an ultrasonic distance sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Parts list：** Spider Eye Decorative Acrylic Panel、Ultrasonic distance sensor
+
 
 ----
 
