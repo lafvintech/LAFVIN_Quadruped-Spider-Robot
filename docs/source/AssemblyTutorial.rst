@@ -83,7 +83,7 @@ STEP 4: Wiring of the body servo
 
  - **Brown Wire**: Ground (GND) - Connect to the ground pin on the expansion board
  - **Red Wire**: Power (VCC) - Connect to the 5V power pin on the expansion board
- - **Yellow Wire**: Signal (PWM) - Connect to the corresponding GPIO pin on the ESP8266 board
+ - **Orange Wire**: Signal (PWM) - Connect to the corresponding GPIO pin on the ESP8266 board
 
 ----
 
@@ -298,4 +298,31 @@ STEP 9: Assemble the tibia and femur
 STEP 9: Servo connected to the tibia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+**The servo connection on the tibia is shown in the figure.**
+
+ .. image:: _static/AssemblyTutorial/20.SERVO2.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. attention::
+
+ The MG90S servo motors are crucial components for controlling the robot's leg movements. Each servo has three wires with specific colors and functions:
+
+ .. image:: _static/AssemblyTutorial/1.servo.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+ - **Brown Wire**: Ground (GND) - Connect to the ground pin on the expansion board
+ - **Red Wire**: Power (VCC) - Connect to the 5V power pin on the expansion board
+ - **Orange Wire**: Signal (PWM) - Connect to the corresponding GPIO pin on the ESP8266 board
+
+----
 
