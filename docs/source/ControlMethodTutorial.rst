@@ -5,6 +5,7 @@ Control Method Tutorial
 
 ----
 
+.. _APP control:
 
 APP control
 -----------
@@ -49,8 +50,27 @@ APP control
 
 4. The status changing to "Connected" indicates that the connection has been successfully established.
 
+5. The left side of the interface controls direction, allowing you to move forward, backward, left, right, turn left, and turn right.
 
+.. image:: _static/APP/5.APP.png
+    :width: 800
+    :align: center
 
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+6. The right side of the interface displays nine preset actions; click the icon to perform the action.
+
+.. image:: _static/APP/6.APP.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
 
 Infrared Remote Control
 -----------------------

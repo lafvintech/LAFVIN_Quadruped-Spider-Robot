@@ -498,7 +498,7 @@ Servo calibration and debug
 
 After manually adjusting the servo to a parallel position, you can use the servo calibration function in the APP to fine-tune the servo and make the spider achieve the best movement gait effect when moving.
 
-1. Connect the quadruped spider robot to the App. Click here for app connection and usage instructions.
+1. Connect the quadruped spider robot to the App. Click here for app connection and usage instructions.:ref:`APP control`
 
 2. Click the top right corner of the App interface to access the servo calibration page.
 
