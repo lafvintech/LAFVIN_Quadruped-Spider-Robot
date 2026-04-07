@@ -478,6 +478,20 @@ Servo calibration and debug
 
 5. Install the screws to secure the servo motor.
 
+.. image:: _static/AssemblyTutorial/33.DJLS.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. note::
+
+   - After adjusting all four legs to a parallel position, install the fixing screws here.
+
+   - The fixing screws here are the screws included in the Servo pack.
+
 ----
 
 **Step 2: Adjust the servo using the APP**
