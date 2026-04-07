@@ -458,7 +458,7 @@ Servo calibration and debug
 
 2. If a servo motor is not in the correct position, the incorrect femur or tibia section can be removed and manually reinstalled to a parallel position.
 
-.. image:: _static/AssemblyTutorial/GIFTEST.gif
+.. image:: _static/AssemblyTutorial/1.gif
     :width: 800
     :align: center
 
@@ -467,7 +467,7 @@ Servo calibration and debug
    <div style="margin-top: 30px;"></div>
 
 .. attention::
-   
+
     When disassembling and reassembling, keep the power supply on and do not manually rotate the servo motor. Instead, remove the acrylic structure and then install it in the correct horizontal position.
 
 ----
