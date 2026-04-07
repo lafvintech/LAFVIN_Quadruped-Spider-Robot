@@ -433,7 +433,7 @@ Servo calibration and debug
  - The servo screws fixed to the femur do not need to be installed for now. If they have already been installed, please remove them first and then fix them after the servo is properly calibrated.
 
  .. image:: _static/AssemblyTutorial/26.notinstall.png
-    :width: 800
+    :width: 400
     :align: center
 
  .. raw:: html
@@ -479,7 +479,7 @@ Servo calibration and debug
 5. Install the screws to secure the servo motor.
 
 .. image:: _static/AssemblyTutorial/33.DJLS.png
-    :width: 800
+    :width: 400
     :align: center
 
 .. raw:: html
