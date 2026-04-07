@@ -70,6 +70,34 @@ APP control
 
    <div style="margin-top: 30px;"></div>
 
+7. At the bottom of the interface is the switch for automatic obstacle avoidance mode. When turned on, the spider robot will enter obstacle avoidance mode and move automatically.
+
+.. image:: _static/APP/7.APP.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+8. The servo calibration button is located in the upper right corner of the interface. Clicking it will take you to the servo calibration page. For detailed calibration instructions, click here to view the instructions. :ref:`Servo calibration and debug:`
+
+.. image:: _static/APP/8.APP.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. image:: _static/APP/9.APP.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 ----
 
 Infrared Remote Control

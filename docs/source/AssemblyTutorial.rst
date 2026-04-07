@@ -417,6 +417,8 @@ Complete assembly result image
 
 ----
 
+.. _Servo calibration and debug:
+
 Servo calibration and debug
 ----------------------------
 
