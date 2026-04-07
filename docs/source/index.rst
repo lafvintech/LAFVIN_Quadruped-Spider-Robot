@@ -9,6 +9,7 @@ LAFVIN Quadruped Spider Robot
    Programmingprogram
    AssemblyTutorial
    FrequentlyAskedQuestions
+   ControlMethodTutorial
 
 
 .. toctree::
