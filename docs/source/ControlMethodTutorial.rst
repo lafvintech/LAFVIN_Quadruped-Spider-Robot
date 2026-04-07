@@ -5,9 +5,6 @@ Control Method Tutorial
 
 ----
 
-Infrared Remote Control
------------------------
-
 
 APP control
 -----------
@@ -54,6 +51,9 @@ APP control
 
 
 
+
+Infrared Remote Control
+-----------------------
 
 
 
