@@ -80,7 +80,7 @@ APP control
 
    <div style="margin-top: 30px;"></div>
 
-8. The servo calibration button is located in the upper right corner of the interface. Clicking it will take you to the servo calibration page. For detailed calibration instructions, click here to view the instructions. :ref:`Servo calibration and debug:`
+8. The servo calibration button is located in the upper right corner of the interface. Clicking it will take you to the servo calibration page. For detailed calibration instructions, click here to view the instructions. :ref:`Servo calibration and debug`
 
 .. image:: _static/APP/8.APP.png
     :width: 800
