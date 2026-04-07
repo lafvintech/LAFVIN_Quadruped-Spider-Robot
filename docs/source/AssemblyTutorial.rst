@@ -468,7 +468,7 @@ Servo calibration and debug
 
 .. attention::
 
-When disassembling and reassembling, keep the power supply on and do not manually rotate the servo motor. Instead, remove the acrylic structure and then install it in the correct horizontal position.
+ When disassembling and reassembling, keep the power supply on and do not manually rotate the servo motor. Instead, remove the acrylic structure and then install it in the correct horizontal position.
 
 ----
 
