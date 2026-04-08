@@ -103,8 +103,17 @@ APP control
 Infrared Remote Control
 -----------------------
 
+- The infrared remote control supports the same quadruped spider robot control functions as the app. See the diagram below for the specific button mappings.
 
+- When operating the infrared remote control, please ensure that it is aligned with the infrared receiver on the expansion board; otherwise, the buttons may become unresponsive.
 
 Automatic Obstacle Avoidance
 ----------------------------
 
+- You can enter automatic obstacle avoidance mode by turning it on in the app or by pressing the number **0** key on the infrared remote control.
+
+- The automatic obstacle avoidance logic of the quadruped spider robot is as follows: In the default state, it continues to move forward; when an obstacle is detected within 40 centimeters in front, the robot will perform a turning obstacle avoidance action until the path ahead is unobstructed and then resumes straight movement.
+
+- The default detection distance for automatic obstacle avoidance is 40 centimeters. This can be adjusted by modifying the code; see the image below for the specific code location.
+
+----
