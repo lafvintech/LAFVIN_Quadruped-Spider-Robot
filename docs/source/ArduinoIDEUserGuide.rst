@@ -199,7 +199,7 @@ You can also download required libraries directly using the Arduino IDE.
 5. Install Serial Port Tool
 ---------------------------
 
- - After connecting the ESP32 to the computer, a USB-to-serial driver needs to be installed to establish communication. For detailed installation steps, please click here. :ref:`Install Serial Port Tool`
+ - After connecting the ESP8266 to the computer, a USB-to-serial driver needs to be installed to establish communication. For detailed installation steps, please click here. :ref:`Install Serial Port Tool`
 
  - If you have already successfully installed the driver, you can skip this step.
 ----
@@ -207,45 +207,21 @@ You can also download required libraries directly using the Arduino IDE.
 6. Upload Test Code
 -------------------
 
- - To verify that the Arduino IDE is configured correctly and the ESP32 development board is working properly, please use the following code to test the onboard LED connected to GPIO pin 2.
+ - To verify that the Arduino IDE is configured correctly and the ESP8266 development board is working properly, please use the following code to test the onboard LED connected to GPIO pin 2.
 
 .. code-block:: cpp
 
- const int ledPin = 2; // PIN for on-board LED
-
- // PWM Configuration
- const int freq = 5000;      // PWM frequency (Hz)
- const int ledChannel = 0;   // Use PWM channel 0 (0-15)
- const int resolution = 8;   // 8-bit resolution (0-255)
+ //ESP8266 Development Board Test Code
 
  void setup() {
-  // Configure PWM channel parameters
-  ledcSetup(ledChannel, freq, resolution);
-  
-  // Attach PWM channel to LED pin
-  ledcAttachPin(ledPin, ledChannel);
-  
-  // Initialize serial communication for debugging
-  Serial.begin(115200);
-  Serial.println("ESP32 Breathing LED Program Started!");
+  Serial.begin(115200);  
+  delay(1000);           
  }
 
  void loop() {
-  // Breathing effect: brightness gradually increases (fade in)
-  for (int dutyCycle = 0; dutyCycle <= 255; dutyCycle++) {
-    ledcWrite(ledChannel, dutyCycle); // Set PWM duty cycle
-    delay(5); // Controls speed (larger value = slower breathing)
-  }
-  
-  // Breathing effect: brightness gradually decreases (fade out)
-  for (int dutyCycle = 255; dutyCycle >= 0; dutyCycle--) {
-    ledcWrite(ledChannel, dutyCycle); // Set PWM duty cycle
-    delay(5); // Controls speed (larger value = slower breathing)
-  }
-  
-  // Optional pause between each breathing cycle
-  delay(100);
-}
+  Serial.println("ESP8266 development board successfully tested");
+  delay(2000);  
+ }
 
 ----
 
@@ -267,9 +243,9 @@ B. As shown in the image below, search for and select the corresponding developm
 
 ----
 
-C. Click the **upload** button to upload the code to the development board.
+C. Click the **Upload** button to upload the code to the development board.
 
-.. image:: _static/arduino/16.code.png
+.. image:: _static/arduino/16.CODE1.png
    :width: 800
    :align: center
 
@@ -277,7 +253,7 @@ C. Click the **upload** button to upload the code to the development board.
 
 D. After clicking upload, the upload progress will be displayed in the output window.
 
-.. image:: _static/arduino/17.code.png
+.. image:: _static/arduino/17.CODE1.png
    :width: 800
    :align: center
 
@@ -285,19 +261,21 @@ D. After clicking upload, the upload progress will be displayed in the output wi
 
    <div style="margin-top: 30px;"></div>
 
-E. Once the output display shows that the upload is complete, press the RST button on the ESP32 development board to start the program.
+E. Once the output display shows that the upload is complete, press the RST button on the ESP8266 development board to start the program.
 
 .. raw:: html
 
    <div style="margin-top: 30px;"></div>
    
-F. After pressing the RST key, you can see the onboard LEDs of the ESP32 development board flashing, proving that the Arduino IDE configuration and the development board are working properly.
+F. Open the serial monitor, set the baud rate to 115200, and you will see the serial port output "ESP8266 development board successfully tested" every 2 seconds.
 
-.. image:: _static/arduino/18.code.png
+.. image:: _static/arduino/18.code1.png
    :width: 800
    :align: center
 
-----
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
 
 **Congratulations! Your Arduino IDE is ready! Now you can start writing your first program!**
 
