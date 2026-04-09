@@ -101,14 +101,14 @@ B. Find the core package named **esp8266 by ESP8266 Community**, select version 
 
 C. The prompt for successful installation indicates that the ESP32 core package has been successfully installed.
 
-.. image:: _static/arduino/22.esp.png
-   :width: 1000
+.. image:: _static/arduino/22.ESP.png
+   :width: 800
    :align: center
 
 ----
 
 .. note::
-   
+
    - It is recommended to install the core package version 2.0.12 for this package. Using other versions may cause program or functional abnormalities
    - During the download process of the core package, it may fail due to network failures. You can try several more times.
 
