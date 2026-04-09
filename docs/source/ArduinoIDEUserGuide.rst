@@ -97,6 +97,7 @@ B. Find the core package named **esp8266 by ESP8266 Community**, select version 
 .. image:: _static/arduino/20.ESP.png
    :width: 800
    :align: center
+
 ----
 
 C. The prompt for successful installation indicates that the ESP32 core package has been successfully installed.
