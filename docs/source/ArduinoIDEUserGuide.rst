@@ -110,7 +110,7 @@ C. The prompt for successful installation indicates that the ESP32 core package 
 
 .. note::
 
-   - It is recommended to install the core package version 2.0.12 for this package. Using other versions may cause program or functional abnormalities
+   - It is recommended to install the core package version 2.4.2 for this package. Using other versions may cause program or functional abnormalities
    - During the download process of the core package, it may fail due to network failures. You can try several more times.
 
 ----
