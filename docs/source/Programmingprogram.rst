@@ -1,4 +1,4 @@
-Programming Program
+Flash The Firmware
 ===================
 
 **The kit is shipped without firmware preloaded, so no response after power-up is normal. Follow the steps below to program the spider robot and make it move.**

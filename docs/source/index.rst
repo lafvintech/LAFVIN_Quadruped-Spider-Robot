@@ -11,7 +11,6 @@ LAFVIN Quadruped Spider Robot
    :maxdepth: 2
    :caption: Quick Start Guide
 
-   Introduction
    Programmingprogram
    AssemblyTutorial
    ControlMethodTutorial
