@@ -207,7 +207,7 @@ You can also download required libraries directly using the Arduino IDE.
 6. Upload Test Code
 -------------------
 
- - To verify that the Arduino IDE is configured correctly and the ESP8266 development board is working properly, please use the following code to test the onboard LED connected to GPIO pin 2.
+ - To verify that the Arduino IDE configuration is correct and that the ESP8266 development board is working properly, please use the following code to test.
 
 .. code-block:: cpp
 
