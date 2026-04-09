@@ -63,7 +63,7 @@ B. After entering the URL, click OK.
 
 - **http://arduino.esp8266.com/stable/package_esp8266com_index.json**
 
-.. image:: _static/arduino/7.ESP.png
+.. image:: _static/arduino/7.ESP1.png
    :width: 800
    :align: center
 
@@ -86,7 +86,7 @@ C. After completing this step, close and reopen the Arduino IDE.
 
 A. Click on the **BOARDS MANAGER** icon on the right and search for **"ESP8266"**.
 
-.. image:: _static/arduino/19.ESP.png
+.. image:: _static/arduino/19.ESP1.png
    :width: 800
    :align: center
 
@@ -94,7 +94,7 @@ A. Click on the **BOARDS MANAGER** icon on the right and search for **"ESP8266"*
 
 B. Find the core package named **esp8266 by ESP8266 Community**, select version **2.4.2**, and click the **install** button to install it.
 
-.. image:: _static/arduino/20.ESP.png
+.. image:: _static/arduino/20.ESP1.png
    :width: 800
    :align: center
 
@@ -102,7 +102,7 @@ B. Find the core package named **esp8266 by ESP8266 Community**, select version 
 
 C. The prompt for successful installation indicates that the ESP32 core package has been successfully installed.
 
-.. image:: _static/arduino/22.ESP.png
+.. image:: _static/arduino/22.ESP1.png
    :width: 800
    :align: center
 
