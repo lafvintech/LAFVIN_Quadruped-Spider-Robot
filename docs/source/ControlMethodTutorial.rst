@@ -116,4 +116,16 @@ Automatic Obstacle Avoidance
 
 - The default detection distance for automatic obstacle avoidance is 40 centimeters. This can be adjusted by modifying the code; see the image below for the specific code location.
 
+.. image:: _static/APP/10.modif.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. note::
+
+    After making the changes, you need to recompile the code and upload it to the ESP8266 development board for the changes to take effect.
+
 ----

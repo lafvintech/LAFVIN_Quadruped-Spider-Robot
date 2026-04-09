@@ -93,6 +93,7 @@ F. After the program is burned, press the RST reset button on the development bo
 ----
 
 .. note::
+   
    If flashing fails, please check the following:
 
    - The USB cable and USB port are functional; try another cable or port.

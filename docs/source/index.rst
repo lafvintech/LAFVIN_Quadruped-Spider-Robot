@@ -3,6 +3,12 @@ LAFVIN Quadruped Spider Robot
 
 .. toctree::
    :maxdepth: 2
+   :caption: About this kit
+
+   Introduction
+
+.. toctree::
+   :maxdepth: 2
    :caption: Quick Start Guide
 
    Introduction
@@ -10,8 +16,6 @@ LAFVIN Quadruped Spider Robot
    AssemblyTutorial
    ControlMethodTutorial
    FrequentlyAskedQuestions
-   
-
 
 .. toctree::
    :maxdepth: 1
