@@ -3,7 +3,7 @@ LAFVIN Quadruped Spider Robot
 
 .. toctree::
    :maxdepth: 2
-   :caption: About this kit
+   :caption: About This Kit
 
    Introduction
 
