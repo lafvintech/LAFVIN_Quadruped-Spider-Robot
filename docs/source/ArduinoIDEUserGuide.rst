@@ -47,8 +47,8 @@ F. Click Install and wait for the process to complete. Finally, click Finish.
 
 ----
 
-2. Add ESP32 Board Manager
---------------------------
+2. Add ESP8266 Board Manager
+----------------------------
 
 A. Open the Arduino IDE, click **File** → **Preferences** in the upper left corner, and copy and paste the following address into the Additional Board Manager URLs input box.
 
@@ -57,9 +57,13 @@ A. Open the Arduino IDE, click **File** → **Preferences** in the upper left co
    :align: center
 ----
 
-B. After entering the URL, click OK. **https://espressif.github.io/arduino-esp32/package_esp32_index.json**
+B. After entering the URL, click OK. 
 
-.. image:: _static/arduino/7.esp.png
+- **https://www.arduino.me/package_esp32_index.json**
+
+- **http://arduino.esp8266.com/stable/package_esp8266com_index.json**
+
+.. image:: _static/arduino/7.ESP.png
    :width: 800
    :align: center
 
@@ -67,42 +71,35 @@ B. After entering the URL, click OK. **https://espressif.github.io/arduino-esp32
 
    <div style="margin-top: 30px;"></div>
 
-.. image:: _static/arduino/8.esp.png
+.. image:: _static/arduino/8.ESP1.png
    :width: 800
    :align: center
+
 ----
 
 C. After completing this step, close and reopen the Arduino IDE.
 
 ----
 
-3. Download  ESP32 Core Package
-----------------------------
+3. Download  ESP8266 Core Package
+--------------------------------
 
-A. Click on the **BOARDS MANAGER** icon on the right and search for **"ESP32"**.
+A. Click on the **BOARDS MANAGER** icon on the right and search for **"ESP8266"**.
 
-.. image:: _static/arduino/19.esp.png
+.. image:: _static/arduino/19.ESP.png
    :width: 800
    :align: center
 
 ----
 
-B. Find the core package named **esp32 by Espressif systems**, select version **2.0.12**, and click the **install** button to install it.
+B. Find the core package named **esp8266 by ESP8266 Community**, select version **2.4.2**, and click the **install** button to install it.
 
-.. image:: _static/arduino/20.esp.png
+.. image:: _static/arduino/20.ESP.png
    :width: 800
    :align: center
 ----
 
-C. You can view the download progress in the OUTLOOK window.
-
-.. image:: _static/arduino/21.esp.png
-   :width: 1000
-   :align: center
-
-----
-
-D. The prompt for successful installation indicates that the ESP32 core package has been successfully installed.
+C. The prompt for successful installation indicates that the ESP32 core package has been successfully installed.
 
 .. image:: _static/arduino/22.esp.png
    :width: 1000
@@ -111,6 +108,7 @@ D. The prompt for successful installation indicates that the ESP32 core package 
 ----
 
 .. note::
+   
    - It is recommended to install the core package version 2.0.12 for this package. Using other versions may cause program or functional abnormalities
    - During the download process of the core package, it may fail due to network failures. You can try several more times.
 
