@@ -229,7 +229,7 @@ A. Copy the code above into the Arduino IDE.
 
 B. As shown in the image below, search for and select the corresponding development board and serial port.
 
-.. image:: _static/arduino/14.code.png
+.. image:: _static/arduino/14.code1.png
    :width: 800
    :align: center
 
@@ -237,7 +237,7 @@ B. As shown in the image below, search for and select the corresponding developm
 
    <div style="margin-top: 30px;"></div>
 
-.. image:: _static/arduino/15.code.png
+.. image:: _static/arduino/15.code1.png
    :width: 800
    :align: center
 
@@ -269,7 +269,7 @@ E. Once the output display shows that the upload is complete, press the RST butt
    
 F. Open the serial monitor, set the baud rate to 115200, and you will see the serial port output "ESP8266 development board successfully tested" every 2 seconds.
 
-.. image:: _static/arduino/18.code1.png
+.. image:: _static/arduino/18.code2.png
    :width: 800
    :align: center
 
