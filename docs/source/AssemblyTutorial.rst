@@ -313,7 +313,7 @@ STEP 10: Tibia and femur assemble into the body
 
    <div style="margin-top: 30px;"></div>
 
-.. image:: _static/AssemblyTutorial/38.servo.png
+.. image:: _static/AssemblyTutorial/37.servo.png
    :width: 800
    :align: center
 
