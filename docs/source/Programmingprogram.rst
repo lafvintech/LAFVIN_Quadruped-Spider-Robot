@@ -57,7 +57,7 @@ C. Click **CONNCE**, and in the pop-up window, select the corresponding port to 
 
 D. Click **FLASH** to start the burning process.
 
-.. image:: _static/program/5.LAFVIN.png
+.. image:: _static/program/5.lafvin.png
    :width: 800
    :align: center
 
