@@ -7,6 +7,7 @@ author = 'Lafvin'
 extensions = [
     "myst_parser",
     "sphinx_copybutton",  # 启用复制按钮插件
+    "sphinxcontrib.video",
 ]
 
 from pygments.lexers import Python3Lexer
