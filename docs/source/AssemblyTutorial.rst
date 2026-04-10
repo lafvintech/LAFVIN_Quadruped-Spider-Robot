@@ -206,11 +206,9 @@ STEP 7: Assemble the thigh and femur
 
 **The differences between the two different assembly methods are shown in the following figure.**
 
- .. image:: _static/AssemblyTutorial/13.qubie.png
+ .. image:: _static/AssemblyTutorial/13.ljj.png
    :width: 800
    :align: center
-
- .. raw:: html
 
 ----
 
