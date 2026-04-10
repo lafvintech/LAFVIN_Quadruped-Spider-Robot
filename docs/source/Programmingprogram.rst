@@ -22,6 +22,12 @@ This kit uses an ESP8266 board with a CP2102 USB-to-UART bridge. Ensure the CP21
 
 `Click here to access the official driver download page <https://www.silabs.com/software-and-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads>`_
 
+For detailed download and installation instructions, please watch the video below.
+
+.. video:: _static/program/driver_ins.mp4
+    :width: 100%
+
+
 ----
 
 .. _Programming Program:
