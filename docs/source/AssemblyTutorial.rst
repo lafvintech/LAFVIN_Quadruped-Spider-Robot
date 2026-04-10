@@ -380,12 +380,44 @@ STEP 13: Assemble the body cover plate
 
 **Parts list：** Acrylic cover plate for the body、 M3*10mm screw(4 PCS)
 
+.. image:: _static/AssemblyTutorial/36.gb.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 ----
 
 STEP 14: Assemble an ultrasonic distance sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Parts list：** Spider Eye Decorative Acrylic Panel、Ultrasonic distance sensor
+
+.. image:: _static/AssemblyTutorial/34.CSB1.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. image:: _static/AssemblyTutorial/34.CSB2.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. image:: _static/AssemblyTutorial/35.csb.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
 
 ----
 
