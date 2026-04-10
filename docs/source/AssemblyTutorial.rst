@@ -270,10 +270,19 @@ STEP 9: Assemble the tibia and femur
  .. raw:: html
 
    <div style="margin-top: 30px;"></div>
+
+ .. image:: _static/AssemblyTutorial/17.leg.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+  
   
 **The second group of tibia and femur assembly is shown in the figure.**
 
- .. image:: _static/AssemblyTutorial/18.触脚2.png
+ .. image:: _static/AssemblyTutorial/18.leg.png
    :width: 800
    :align: center
 
@@ -297,6 +306,14 @@ STEP 10: Tibia and femur assemble into the body
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: _static/AssemblyTutorial/21.servo1.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. image:: _static/AssemblyTutorial/38.servo.png
    :width: 800
    :align: center
 
