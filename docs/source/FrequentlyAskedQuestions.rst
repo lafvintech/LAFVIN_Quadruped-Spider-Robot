@@ -53,7 +53,7 @@ Frequently Asked Questions
 
 **8.The spider robot exhibits uncoordinated gait and abnormal walking.**
 
- - Please click here to jump to the servo calibration guide section.:ref:`Servo calibration and debug`
+ - Please click here to jump to the servo calibration guide section. :ref:`Servo calibration and debug`
 
 
 ----
