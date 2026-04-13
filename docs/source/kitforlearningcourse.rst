@@ -43,15 +43,80 @@ Example code
 Achieved Effect
 ~~~~~~~~~~~~~~~~
 
- - Connect the servo motor to pin D4; the servo motor will rotate 180° every 3 seconds.
-
-.. image:: _static/course/1.1servo.gif
-   :width: 800
-   :align: center
+- Connect the servo motor to pin D4; the servo motor will rotate 180° every 3 seconds.
 
 .. raw:: html
 
    <div style="margin-top: 30px;"></div>
 
+.. image:: _static/course/1.1servo.gif
+   :width: 800
+   :align: center
+
 ----
 
+Rotate two servo motors
+------------------------
+
+Wiring diagram
+~~~~~~~~~~~~~~
+
+- MG90 Servo —— ESP8266 D4
+
+- MG90 Servo —— ESP8266 D8
+
+----
+
+Example code
+~~~~~~~~~~~~
+
+ #include <Servo.h>
+
+ Servo myservo1;  // Pin D4 SERVO
+ Servo myservo2;  // Pin D8 SERVO
+ 
+ #define SERVO_PIN1 D4
+ #define SERVO_PIN2 D8
+
+ void setup() {
+  myservo1.attach(SERVO_PIN1);
+  myservo2.attach(SERVO_PIN2);
+  
+  myservo1.write(0);
+  myservo2.write(0);
+ }
+
+ void loop() {
+  // Both servos rotate 180 degrees simultaneously
+
+  myservo1.write(180);
+  myservo2.write(180);
+  delay(2000);
+  
+  // Both servos return to 0 degrees simultaneously
+
+  myservo1.write(0);
+  myservo2.write(0);
+  delay(2000);
+ }
+
+----
+
+Achieved Effect
+~~~~~~~~~~~~~~~~
+
+- Similar to the previous lesson, you only need to add one more servo and one more definition in the code to make both servos move simultaneously.
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+.. image:: _static/course/1.1servo.gif
+   :width: 800
+   :align: center
+
+----
+
+
+Let the spider move forward
+----------------------------
