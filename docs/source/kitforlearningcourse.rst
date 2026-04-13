@@ -556,6 +556,7 @@ Achieved Effect
 
 .. video:: _static/course/5.wifi.mp4
     :width: 60%
+    :align: center
 
 - After the code is successfully burned, connect the ultrasonic distance sensor to the expansion board and press the "RST" button on the ESP8266.
 
