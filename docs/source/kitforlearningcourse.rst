@@ -297,31 +297,19 @@ In this lesson, we will make full use of the built-in Wi-Fi function of the ESP8
 Wiring diagram
 ~~~~~~~~~~~~~~
 
-
 .. list-table:: Wiring Table
-
    :header-rows: 1
-
    :widths: 50 50
 
    * - Ultrasonic Distance Sensor
-
      - Spider Robot Expansion Board
-
    * - VCC
-
      - 5V
-
    * - GND
-
      - GND
-
    * - TRIG
-
      - TX
-
    * - ECHO
-
      - RX
 
 ----
@@ -334,6 +322,8 @@ Wiring diagram
 
 Example code
 ~~~~~~~~~~~~
+
+.. code-block:: cpp
 
   #include <ESP8266WiFi.h>
   #include <ESP8266WebServer.h>
@@ -565,7 +555,7 @@ Achieved Effect
 ~~~~~~~~~~~~~~~~
 
 .. video:: _static/course/5.wifi.mp4
-    :width: 100%
+    :width: 60%
 
 - After the code is successfully burned, connect the ultrasonic distance sensor to the expansion board and press the "RST" button on the ESP8266.
 
