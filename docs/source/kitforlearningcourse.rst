@@ -36,7 +36,7 @@ Example code
   
   myservo.write(0);
   delay(3000);
-}
+ }
 
 ----
 
@@ -44,6 +44,14 @@ Achieved Effect
 ~~~~~~~~~~~~~~~~
 
  - Connect the servo motor to pin D4; the servo motor will rotate 180° every 3 seconds.
+
+.. image:: _static/course/1.servo.gif
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
 
 ----
 
