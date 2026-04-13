@@ -263,14 +263,6 @@ STEP 9: Assemble the tibia and femur
 
 **The first group of tibia and femur assembly is shown in the figure.**
 
- .. image:: _static/AssemblyTutorial/17.触脚1.png
-   :width: 800
-   :align: center
-
- .. raw:: html
-
-   <div style="margin-top: 30px;"></div>
-
  .. image:: _static/AssemblyTutorial/17.leg.png
    :width: 800
    :align: center
