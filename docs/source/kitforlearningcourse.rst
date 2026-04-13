@@ -297,7 +297,7 @@ In this lesson, we will make full use of the built-in Wi-Fi function of the ESP8
 Wiring diagram
 ~~~~~~~~~~~~~~
 
-.. list-table:: Wiring Table
+.. list-table::
    :header-rows: 1
    :widths: 50 50
 
@@ -329,7 +329,7 @@ Example code
   #include <ESP8266WebServer.h>
 
   // WiFi hotspot configuration
-  const char* ssid = "ESP8266 Rangefinder";
+  const char* ssid = "ESP8266-Distance-Meter";
   const char* password = "12345678";
 
   // Using RX/TX pins (GPIO1 and GPIO3)
@@ -559,7 +559,7 @@ Achieved Effect
 
 - After the code is successfully burned, connect the ultrasonic distance sensor to the expansion board and press the "RST" button on the ESP8266.
 
-- Turn on your phone's Wi-Fi, find and connect to a Wi-Fi network named: **ESP8266 Rangefinder** with the password: **12345678**.
+- Turn on your phone's Wi-Fi, find and connect to a Wi-Fi network named: **ESP8266-Distance-Meter** with the password: **12345678**.
 
 - After successfully connecting to Wi-Fi, open any browser on your phone and enter the IP address: 192.168.4.1 to access the distance measurement display page.
 
