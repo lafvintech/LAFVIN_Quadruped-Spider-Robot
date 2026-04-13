@@ -45,6 +45,8 @@ Achieved Effect
 
 - Connect the servo motor to pin D4; the servo motor will rotate 180° every 3 seconds.
 
+- You can use this program to sequentially switch between connecting 8 servos to test whether the servos are working properly.
+
 .. raw:: html
 
    <div style="margin-top: 30px;"></div>
