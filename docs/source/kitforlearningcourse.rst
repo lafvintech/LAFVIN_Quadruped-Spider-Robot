@@ -136,7 +136,7 @@ Please connect the wires as shown in the diagram below.
 
    <div style="margin-top: 30px;"></div>
 
-.. image:: _static/course/2.body.gif
+.. image:: _static/course/2.body.png
    :width: 800
    :align: center
 
@@ -144,7 +144,7 @@ Please connect the wires as shown in the diagram below.
 
    <div style="margin-top: 30px;"></div>
 
-.. image:: _static/course/3.SERVO2.gif
+.. image:: _static/course/3.SERVO2.png
    :width: 800
    :align: center
 
@@ -268,7 +268,7 @@ Achieved Effect
 
    <div style="margin-top: 30px;"></div>
 
-.. image:: _static/course/4.com.gif
+.. image:: _static/course/4.com.png
    :width: 800
    :align: center
 
@@ -276,7 +276,7 @@ Achieved Effect
 
    <div style="margin-top: 30px;"></div>
 
-- If the spider robot's forward movement is abnormal, ensure that the spider robot's initial installation position is as shown below, and click here to jump to the servo calibration page.
+- If the spider robot's forward movement is abnormal, ensure that the spider robot's initial installation position is as shown below, and click here to jump to the servo calibration page. :ref:`Servo calibration and debug`
 
 - Since the code here only contains forward motion, the servo cannot be calibrated using the app; you only need to check the manual servo calibration section.
 
