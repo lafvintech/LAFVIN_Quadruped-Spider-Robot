@@ -558,6 +558,10 @@ Achieved Effect
     :width: 60%
     :align: center
 
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 - After the code is successfully burned, connect the ultrasonic distance sensor to the expansion board and press the "RST" button on the ESP8266.
 
 - Turn on your phone's Wi-Fi, find and connect to a Wi-Fi network named: **ESP8266-Distance-Meter** with the password: **12345678**.
