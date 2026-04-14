@@ -5,8 +5,8 @@ kit For Learning Course
 
 ----
 
-1. Make the servo motor turn
------------------------------
+Course 1：Make the servo motor turn
+------------------------------------
 
 Wiring diagram
 ~~~~~~~~~~~~~~
@@ -57,8 +57,8 @@ Achieved Effect
 
 ----
 
-Rotate two servo motors
-------------------------
+Course 2：Rotate two servo motors
+----------------------------------
 
 Wiring diagram
 ~~~~~~~~~~~~~~
@@ -122,8 +122,8 @@ Achieved Effect
 ----
 
 
-Let the spider move forward
-----------------------------
+Course 3：Let the spider move forward
+-------------------------------------
 
 In the previous two lessons, we've already gotten two servos moving. Next, we'll get all eight servos moving simultaneously to propel the spider forward.
 
@@ -287,8 +287,8 @@ Achieved Effect
 
 ----
 
-ESP8266 Rangefinder
--------------------
+Course 4：ESP8266 Rangefinder
+-----------------------------
 
 In this lesson, we will make full use of the built-in Wi-Fi function of the ESP8266 development board and combine it with an ultrasonic distance sensor to make a rangefinder.
 
@@ -554,7 +554,7 @@ Example code
 Achieved Effect
 ~~~~~~~~~~~~~~~~
 
-.. video:: _static/course/5.wifi.mp4
+.. video:: _static/course/5.WIFI1.mp4
     :width: 60%
     :align: center
 
@@ -569,3 +569,7 @@ Achieved Effect
 - After successfully connecting to Wi-Fi, open any browser on your phone and enter the IP address: 192.168.4.1 to access the distance measurement display page.
 
 ----
+
+Course 5：ESP8266 Rangefinder
+-----------------------------
+
