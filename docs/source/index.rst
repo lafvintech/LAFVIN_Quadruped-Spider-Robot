@@ -20,6 +20,6 @@ LAFVIN Quadruped Spider Robot
    :maxdepth: 1
    :caption:  Experimental Course
 
-   ArduinoIDEUserGuide
    Components
+   ArduinoIDEUserGuide
    kitforlearningcourse
