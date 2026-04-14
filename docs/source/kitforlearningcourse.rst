@@ -454,7 +454,7 @@ In this lesson, we will control a servo motor using an infrared remote control.
 Wiring diagram
 ~~~~~~~~~~~~~~
 
-- SERVO11-D4
+- SERVO1-D4
 
 - SERVO2-D8
 
