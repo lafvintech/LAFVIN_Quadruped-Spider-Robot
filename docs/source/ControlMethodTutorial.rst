@@ -56,7 +56,7 @@ APP control
   
   - The following is an illustration of enabling Wi-Fi permission on an iOS system：Setting-Apps-Spiderbot-Wireless Ddta-WLAN & Cellular Data.
 
-  .. image:: _static/APP/11.WiFi.png
+  .. image:: _static/APP/11.wifi.png
     :width: 800
     :align: center
 
