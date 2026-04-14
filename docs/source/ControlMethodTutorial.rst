@@ -50,6 +50,21 @@ APP control
 
 4. The status changing to "Connected" indicates that the connection has been successfully established.
 
+.. attention::
+
+  - If the connection fails, please ensure that the Wi-Fi connection is working properly and enable Wi-Fi access for the app in the settings.
+  
+  - The following is an illustration of enabling Wi-Fi permission on an iOS system：Setting-Apps-Spiderbot-Wireless Ddta-WLAN & Cellular Data.
+
+  .. image:: _static/APP/11.WiFi.png
+    :width: 800
+    :align: center
+
+  .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+
 5. The left side of the interface controls direction, allowing you to move forward, backward, left, right, turn left, and turn right.
 
 .. image:: _static/APP/5.APP.png
