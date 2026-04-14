@@ -12,8 +12,8 @@ APP control
 
 1. Download program：Scan the QR code below to go to the app download page.
 
-.. image:: _static/APP/1.APP.png
-    :width: 500
+.. image:: _static/APP/1.APP1.png
+    :width: 800
     :align: center
 
 .. raw:: html
