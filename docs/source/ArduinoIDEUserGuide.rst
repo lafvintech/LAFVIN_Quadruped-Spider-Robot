@@ -118,81 +118,41 @@ C. The prompt for successful installation indicates that the ESP32 core package 
 4. Add Libraries
 ----------------
 
-Arduino libraries can significantly simplify the development process.
+- The Arduino library simplifies development by encapsulating driver code, allowing users to quickly integrate sensors and modules without writing low-level functions and easily expand hardware functionality.
 
-They encapsulate commonly used functions and hardware driver code, allowing users to simply call ready-made functions without writing complex low-level code from scratch.
-
-A wealth of community-provided third-party libraries also allows for quick integration with various sensors and modules.
-
-These library functions make it easy to interact with hardware and expand Arduino’s functionality.
-
-A. We've compiled all the libraries necessary to run this suite. Please click the link below to download them and follow the instructions to complete the installation:  `Download libraries <https://www.dropbox.com/scl/fo/syf1zstu58f4xlcld2nss/ACJOi93PcIafo5yGabrprDA?rlkey=hoc2undykymrxac7z8nclpk9u&st=el86zaw9&dl=1>`_
+- Most of the library files in this kit are included with the Arduino IDE; only the infrared library needs to be downloaded separately. The specific download method is described below.
 
 ----
 
-B. Unzip the downloaded library file. The library file storage path is **Code and Libraries** → **Libraries** . Open it and confirm that it contains the library file shown in the figure below.
+A. On the right side of the Arduino IDE interface, click the "Library Manager" icon.
 
-- Adafruit_NeoPixel.zip
-- FastLED.zip
-
-.. image:: _static/arduino/23.lib.png
-   :width: 1000
+.. image:: _static/arduino/23.LIB.png
+   :width: 800
    :align: center
 
 .. raw:: html
 
    <div style="margin-top: 30px;"></div>
 
-**Both of these library files need to be imported.**
+B. Enter keywords in the search box to find the required library, and then click "Install" to download it.
 
-----
-
-C. Open the Arduino IDE and click **Sketch** → **Include Library** → **Add .ZIP Library**.
-
-.. image:: _static/arduino/9.lib.png
+.. image:: _static/arduino/24.LIB.png
    :width: 800
    :align: center
 
-----
+.. raw:: html
 
-D. In the pop-up window, locate the folder of the library you just downloaded and unzipped, select it, and click Open to complete the import.
+   <div style="margin-top: 30px;"></div>
 
-.. image:: _static/arduino/10.lib.png
+C. Just wait for the installation to complete.
+
+.. image:: _static/arduino/25.LIB.png
    :width: 800
    :align: center
 
-----
+.. raw:: html
 
-E. If the library file is imported successfully, the Arduino IDE output window will display the message: **Library installed**.
-
-.. image:: _static/arduino/11.lib.png
-   :width: 800
-   :align: center
-
-----
-
-.. note::
-
-   - The Arduino IDE does not support importing multiple libraries at once; you must import one library at a time, and all library files included in the resources must be imported.
-   - If a library file already exists, a prompt will appear asking whether to overwrite it. It is recommended to confirm overwrite to avoid program errors caused by different library versions.
-
-.. image:: _static/arduino/12.lib.png
-   :width: 800
-   :align: center
-
-----
-
-F. Download Libraries Using Arduino IDE
-
-You can also download required libraries directly using the Arduino IDE.
-
- - On the right side of the Arduino IDE interface, click the Library Manager icon.
-
- - Enter keywords in the search box to find the required library and click Install to download.
-
-.. image:: _static/arduino/13.lib.png
-   :width: 800
-   :align: center
+   <div style="margin-top: 30px;"></div>
 
 ----
 
@@ -202,6 +162,7 @@ You can also download required libraries directly using the Arduino IDE.
  - After connecting the ESP8266 to the computer, a USB-to-serial driver needs to be installed to establish communication. For detailed installation steps, please click here. :ref:`Install Serial Port Tool`
 
  - If you have already successfully installed the driver, you can skip this step.
+
 ----
 
 6. Upload Test Code
