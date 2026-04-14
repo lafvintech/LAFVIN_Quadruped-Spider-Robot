@@ -126,7 +126,7 @@ C. The prompt for successful installation indicates that the ESP32 core package 
 
 A. On the right side of the Arduino IDE interface, click the "Library Manager" icon.
 
-.. image:: _static/arduino/23.LIB.png
+.. image:: _static/arduino/23.LIB1.png
    :width: 800
    :align: center
 
