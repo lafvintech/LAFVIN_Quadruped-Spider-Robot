@@ -12,7 +12,7 @@ APP control
 
 1. Download program：Scan the QR code below to go to the app download page.
 
-.. image:: _static/APP/1.APP1.png
+.. image:: _static/APP/1.APPQR.png
     :width: 800
     :align: center
 
