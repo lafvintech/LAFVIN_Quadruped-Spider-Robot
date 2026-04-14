@@ -552,7 +552,7 @@ Achieved Effect
 
 - Pressing the number 1 and number 2 buttons on the infrared remote control will cause the two servos to rotate 180 degrees each.
 
-.. image:: _static/course/1.1servo.gif
+.. image:: _static/course/7.IRSERVO.gif
    :width: 800
    :align: center
 
