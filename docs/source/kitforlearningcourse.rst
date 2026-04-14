@@ -428,7 +428,7 @@ Example code
 Achieved Effect
 ~~~~~~~~~~~~~~~~
 
-.. video:: _static/course/5.WIFI1.mp4
+.. video:: _static/course/6.IR.mp4
     :width: 60%
     :align: center
 
