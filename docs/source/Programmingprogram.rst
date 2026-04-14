@@ -7,6 +7,20 @@ Flash The Firmware
 
 ----
 
+.. attention::
+
+ When writing firmware, please connect the ESP8266 development board separately, without external sensors or steering gear. Pay special attention not to connect the ultrasonic distance sensor, or it will cause serial port conflict and firmware write failure.
+
+ .. image:: _static/program/7.esp8266.png
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
 .. _Install Serial Port Tool:
 
 Install Serial Port Tool
@@ -53,7 +67,7 @@ A. Click here to open the LAFVIN ESP Web Tool: `LAFVIN ESP Web Tool <https://laf
 
 B. Select the corresponding program for burning according to the image below.
 
-C. Click **CONNCE**, and in the pop-up window, select the corresponding port to connect.
+C. Click **Connect**, and in the pop-up window, select the corresponding port to connect.
 
 .. image:: _static/program/4.lafvin.png
    :width: 800
@@ -84,20 +98,6 @@ E. Waiting for the burning process to complete.
    <div style="margin-top: 30px;"></div>
 
 F. After the program is burned, press the RST reset button on the development board and the system will start running.
-
-----
-
-.. attention::
-
- When programming, simply connect the data cable to the ESP8266 development board; there is no need to connect it to the expansion board or any servos or ultrasonic sensors to avoid programming failure.
-
- .. image:: _static/program/7.esp8266.png
-   :width: 800
-   :align: center
-
- .. raw:: html
-
-   <div style="margin-top: 30px;"></div>
 
 ----
 
