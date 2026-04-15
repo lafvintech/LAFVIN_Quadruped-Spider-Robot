@@ -4,6 +4,11 @@ Assembly Tutorial
 Video Assembly Tutorial
 -----------------------
 
+.. video:: _static/AssemblyTutorial/0.Assemblyvideo.mp4
+    :width: 100%
+
+----
+
 - The video provides a step-by-step assembly tutorial for the quadruped spider robot. Watching this video will help you assemble it quickly.
 
 - For a more detailed assembly guide with text and images, please continue reading below.
