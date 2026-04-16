@@ -115,7 +115,7 @@ Achieved Effect
 
    <div style="margin-top: 30px;"></div>
 
-.. image:: _static/course/1.1servo.gif
+.. image:: _static/course/8.servo2.gif
    :width: 800
    :align: center
 
