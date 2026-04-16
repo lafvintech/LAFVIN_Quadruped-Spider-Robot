@@ -151,6 +151,14 @@ STEP 6: Trim swing arm
 
 To ensure smooth movement of the spider robot, please trim the servo arms to the appropriate length as shown in the diagram. Please handle with care during operation.
 
+ .. image:: _static/AssemblyTutorial/39.XJ.gif
+   :width: 800
+   :align: center
+
+ .. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
  .. image:: _static/AssemblyTutorial/8.xiujian.png
    :width: 800
    :align: center
