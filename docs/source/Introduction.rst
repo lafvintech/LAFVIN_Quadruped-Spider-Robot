@@ -1,3 +1,6 @@
+Introduction
+============
+
 **Dear maker friends, welcome to the learning world of the LAFVIN Quadruped Spider Robot!**
 
 **Please read this documentation carefully. If you encounter any problems during use, please contact our after-sales support team, and we will assist you as soon as possible.**
@@ -12,16 +15,22 @@
 
 ----
 
-Introduction
-============
+Function Introduction
+=====================
 
 This quadruped spider robot, based on the ESP8266, features a multi-degree-of-freedom design and offers a wide range of flexible movements. It integrates Wi-Fi, infrared remote control, and ultrasonic obstacle avoidance, and is equipped with eight MG90 servos, supporting six postures and nine preset actions. A comprehensive curriculum is included, and open-source code supports secondary development, making it suitable for teaching, demonstrations, research, and maker projects.
 
-1. Wi-Fi/Infrared Dual-Mode Remote Control: Supports both APP and infrared remote control.
+**APP Control:**
 
-2. Ultrasonic Intelligent Obstacle Avoidance: Automatically detects the distance to obstacles ahead and automatically steers when an obstacle is encountered.
+The robot can be controlled via a mobile application, allowing you to easily manage its movements and functions through your smartphone.
 
-3. Entertainment Performance: Bionic design with multiple preset dance and movement modes for performance demonstrations.
+**Infrared Remote Control:**
+
+The robot can also be operated using an infrared remote controller, providing an alternative method for controlling its actions.
+
+**Ultrasonic Obstacle Avoidance:**   
+
+The robot is equipped with an ultrasonic distance sensor that enables it to detect and avoid obstacles in its path, enhancing its navigation capabilities.
 
 ----
 
@@ -84,11 +93,9 @@ Resource Download
 
 All the necessary code and library files for this course are provided. You can obtain all the resources through the following link.
 
-`Code and Libraries <https://www.dropbox.com/scl/fo/6b87ngd7sfcc3ek2p17dv/AJNwM44iGBfCzATI8DuXs1o?rlkey=u1lkd4h4v1velwep2134m3sr8&st=8xsktcqb&dl=0>`_
+`Code and Libraries <https://www.dropbox.com/scl/fo/a6ho5cf95ha65esq2odw6/AJXY-Am6qb03g0PRiQOCCNQ?rlkey=hmndkdpv0zjwaymovmp16hevn&st=n1o5zzxr&dl=1>`_
 
 `Flash Download Tool <https://www.dropbox.com/scl/fo/r81afjixw65y88jikwxno/AM8XTGDtfcEJDgN0jHyMbRY?rlkey=4lvaoh0axd9nhvk9al7qukoi5&st=1hqtehms&dl=1>`_
-
-`Serial Port Tool <https://www.dropbox.com/scl/fo/c4bb59fr42qcs9cxgexan/AIMImtqevecMqYNMJVK1ZBM?rlkey=9afntuwy2usxfxbl7xjkoirsy&st=89a5bx6b&dl=1>`_
 
 ----
 
