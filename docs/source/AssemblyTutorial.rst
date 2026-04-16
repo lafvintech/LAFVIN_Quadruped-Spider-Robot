@@ -4,7 +4,7 @@ Assembly Tutorial
 Video Assembly Tutorial
 -----------------------
 
-.. video:: _static/AssemblyTutorial/0.AssemblyvideoV3.mp4
+.. video:: _static/AssemblyTutorial/0.ASSEMBLY.mp4
     :width: 100%
 
 ----
