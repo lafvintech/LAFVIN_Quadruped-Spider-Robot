@@ -9,7 +9,7 @@ Introduction
 
 **LAFVIN Quadruped Spider Robot**
 
-.. image:: _static/4.piano.png
+.. image:: _static/2.spider.png
    :width: 800
    :align: center
 
@@ -37,7 +37,7 @@ The robot is equipped with an ultrasonic distance sensor that enables it to dete
 Bill of Materials
 -----------------
 
-.. image:: _static/3.BOM.png
+.. image:: _static/3.bom.png
    :width: 1000
    :align: center
 
@@ -65,8 +65,8 @@ Bill of Materials
      - Infrared Remote Controller
      - x1
    * - 6
-     - Custom Acrylic Plate Set
-     - x1
+     - Custom Acrylic Plate
+     - x2
    * - 7
      - Micro USB Data Cable
      - x1
