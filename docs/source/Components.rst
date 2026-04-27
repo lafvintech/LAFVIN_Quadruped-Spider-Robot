@@ -50,7 +50,7 @@ Quadruped Spider Robot Expansion Board
 The Quadruped Spider Robot Expansion Board is specifically designed for this kit. It features an onboard battery compartment and charging functionality, along with multiple circuit protection designs including reverse polarity protection and fuses. It also includes large capacitors to enhance system stability and instantaneous response capability, ensuring smooth and reliable servo operation. Additionally, it extends the ESP8266 development board's pins for easy wiring.
 
 .. image:: _static/Component/6.expb.png
-   :width: 800
+   :width: 400
    :align: center
 
 .. raw:: html
@@ -223,4 +223,3 @@ The module automatically handles the IR protocol decoding, outputting a clean di
 - Remote control for manual operation.
 
 ----
-
