@@ -130,6 +130,18 @@ Infrared Remote Control
 
 - When operating the infrared remote control, please ensure that it is aligned with the infrared receiver on the expansion board; otherwise, the buttons may become unresponsive.
 
+- The following are the functions of the infrared remote control buttons.
+
+.. image:: _static/APP/13.ir.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+----
+
 Automatic Obstacle Avoidance
 ----------------------------
 
