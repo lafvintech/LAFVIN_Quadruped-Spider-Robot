@@ -8,6 +8,14 @@ Components Introduction
 ESP8266 Development Board
 --------------------------
 
+.. image:: _static/Component/7.esp8266.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 The **ESP8266** is a low-cost, highly integrated Wi-Fi microcontroller system-on-chip (SoC) designed for IoT and embedded applications. It features a 32-bit RISC processor with built-in Wi-Fi capability, making it ideal for smart home devices, robotics, and connected sensors.
 
 **Key Features:**
@@ -29,6 +37,15 @@ The ESP8266 operates based on a Xtensa processor core with an integrated Wi-Fi r
 
 Quadruped Spider Robot Expansion Board
 --------------------------------------
+
+.. image:: _static/Component/5.expb.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 
 The Quadruped Spider Robot Expansion Board is specifically designed for this kit. It features an onboard battery compartment and charging functionality, along with multiple circuit protection designs including reverse polarity protection and fuses. It also includes large capacitors to enhance system stability and instantaneous response capability, ensuring smooth and reliable servo operation. Additionally, it extends the ESP8266 development board's pins for easy wiring.
 
@@ -58,6 +75,22 @@ The following is a pinout diagram of the expansion board and the ESP8266 develop
      - GPIO13
    * - D8
      - GPIO15
+
+.. image:: _static/Component/6.expb.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+**Indicator lights: **
+
+- CHRG: flashes while charging; 
+
+- STDBY: stays on when fully charged; 
+
+- PWR: stays on when power is on.
 
 ----
 
