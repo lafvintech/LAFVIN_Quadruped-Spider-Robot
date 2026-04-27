@@ -191,7 +191,7 @@ Infrared Receiver
 
 The **IRM-3638T** is an infrared (IR) receiver module designed to detect and decode infrared signals from remote controls and other IR transmitters. It is commonly used in consumer electronics and robotics for wireless control applications.
 
-.. image:: _static/Component/4.IR.png
+.. image:: _static/Component/9.ir.png
    :width: 500
    :align: center
 
