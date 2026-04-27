@@ -39,7 +39,7 @@ Quadruped Spider Robot Expansion Board
 --------------------------------------
 
 .. image:: _static/Component/5.expb.png
-   :width: 800
+   :width: 400
    :align: center
 
 .. raw:: html
@@ -54,7 +54,8 @@ The following is a pinout diagram of the expansion board and the ESP8266 develop
 .. list-table::
    :header-rows: 1
    :widths: 50 50
-
+   :align: center
+   
    * - Digital Pin
      - GPIO
    * - D0
@@ -84,7 +85,7 @@ The following is a pinout diagram of the expansion board and the ESP8266 develop
 
    <div style="margin-top: 30px;"></div>
 
-**Indicator lights: **
+**Indicator lights:**
 
 - CHRG: flashes while charging; 
 
