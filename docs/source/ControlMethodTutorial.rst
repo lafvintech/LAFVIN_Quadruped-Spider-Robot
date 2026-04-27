@@ -3,6 +3,14 @@ Control Method Tutorial
 
 **This kit's quadruped spider robot has three control methods: infrared remote control, mobile APP control, and automatic obstacle avoidance mode.The following sections will introduce the usage tutorials for each of these three methods.**
 
+.. image:: _static/APP/12.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 ----
 
 .. _APP control:
