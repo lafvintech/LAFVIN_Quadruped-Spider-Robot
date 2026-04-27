@@ -39,7 +39,7 @@ Quadruped Spider Robot Expansion Board
 --------------------------------------
 
 .. image:: _static/Component/5.expb.png
-   :width: 400
+   :width: 200
    :align: center
 
 .. raw:: html
@@ -49,13 +49,29 @@ Quadruped Spider Robot Expansion Board
 
 The Quadruped Spider Robot Expansion Board is specifically designed for this kit. It features an onboard battery compartment and charging functionality, along with multiple circuit protection designs including reverse polarity protection and fuses. It also includes large capacitors to enhance system stability and instantaneous response capability, ensuring smooth and reliable servo operation. Additionally, it extends the ESP8266 development board's pins for easy wiring.
 
+.. image:: _static/Component/6.expb.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+**Indicator lights:**
+
+- CHRG: flashes while charging; 
+
+- STDBY: stays on when fully charged; 
+
+- PWR: stays on when power is on.
+
 The following is a pinout diagram of the expansion board and the ESP8266 development board:
 
 .. list-table::
    :header-rows: 1
    :widths: 50 50
    :align: center
-   
+
    * - Digital Pin
      - GPIO
    * - D0
@@ -77,26 +93,18 @@ The following is a pinout diagram of the expansion board and the ESP8266 develop
    * - D8
      - GPIO15
 
-.. image:: _static/Component/6.expb.png
+----
+
+MG90S Servo
+-----------
+
+.. image:: _static/Component/8.MG90S.png
    :width: 800
    :align: center
 
 .. raw:: html
 
    <div style="margin-top: 30px;"></div>
-
-**Indicator lights:**
-
-- CHRG: flashes while charging; 
-
-- STDBY: stays on when fully charged; 
-
-- PWR: stays on when power is on.
-
-----
-
-MG90S Servo
------------
 
 The **MG90S Servo** is a small, lightweight servo motor widely used in robotics and RC applications. It features high torque, fast response time, and precise angle control, making it ideal for driving the legs of the spider robot in this kit.
 
