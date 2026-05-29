@@ -75,6 +75,14 @@ B. Select the corresponding program for burning according to the image below.
 
    <div style="margin-top: 30px;"></div>
 
+.. image:: _static/program/15.lafvin.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 C. Click **Connect**, and in the pop-up window, select the corresponding port to connect.
 
 .. image:: _static/program/4.lafvin.png
