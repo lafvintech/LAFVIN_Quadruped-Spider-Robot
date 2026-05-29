@@ -75,6 +75,7 @@ B. Select the corresponding program for burning according to the image below.
 
    <div style="margin-top: 30px;"></div>
 
+C. Select the firmware version as shown in the image.
 .. image:: _static/program/15.lafvin.png
    :width: 800
    :align: center
@@ -83,7 +84,7 @@ B. Select the corresponding program for burning according to the image below.
 
    <div style="margin-top: 30px;"></div>
 
-C. Click **Connect**, and in the pop-up window, select the corresponding port to connect.
+D. Click **Connect**, and in the pop-up window, select the corresponding port to connect.
 
 .. image:: _static/program/4.lafvin.png
    :width: 800
@@ -93,7 +94,7 @@ C. Click **Connect**, and in the pop-up window, select the corresponding port to
 
    <div style="margin-top: 30px;"></div>
 
-D. Click **FLASH** to start the burning process.
+E. Click **FLASH** to start the burning process.
 
 .. image:: _static/program/5.lafvin.png
    :width: 800
@@ -103,7 +104,7 @@ D. Click **FLASH** to start the burning process.
 
    <div style="margin-top: 30px;"></div>
 
-E. Waiting for the burning process to complete.
+F. Waiting for the burning process to complete.
 
 .. image:: _static/program/6.lafvin.png
    :width: 800
@@ -113,7 +114,7 @@ E. Waiting for the burning process to complete.
 
    <div style="margin-top: 30px;"></div>
 
-F. After the program is burned, press the RST reset button on the development board and the system will start running.
+G. After the program is burned, press the RST reset button on the development board and the system will start running.
 
 ----
 
