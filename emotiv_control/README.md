@@ -2,33 +2,40 @@
 
 Control the LAFVIN quadruped spider (ESP8266 + 8 servos) two ways at once:
 
-- a **local browser control panel** with buttons (Forward / Back / Left / Right / Stop), and
-- **Emotiv EPOC X mental commands** (think *push / pull / left / right* to move).
+- a **phone/browser control panel** with buttons (Forward / Back / Left / Right / Stop),
+  served **directly by the ESP8266** — no computer needed, and
+- **Emotiv EPOC X mental commands** (think *push / pull / left / right* to move), forwarded
+  from a PC.
 
-Both paths send the same one-character command to the robot over Wi-Fi (UDP), so you
-can verify everything with the buttons **before** dealing with the headset.
+Both paths set the same one-character command on the robot, so you can verify everything
+with the buttons **before** dealing with the headset.
 
 ```
-   Browser @ http://localhost:8080  ──┐  (button click → /cmd?c=F)
-   (Forward/Back/Left/Right/Stop)      │
-                                       ├──▶ emotiv_bridge.py ──UDP :4210──▶ ESP8266
-   Emotiv EPOC X ──USB/BT──▶ Cortex ───┘   (send_command)     (same LAN)   (WiFiUDP → gait)
-   (wss://localhost:6868, "com" stream)
+   Phone/PC browser  ── http:// <ESP-IP> /cmd?c=F ──────────────┐
+   (Forward/Back/Left/Right/Stop)                               ▼
+                                                        ESP8266  (web panel :80
+   Emotiv EPOC X ──USB/BT──▶ PC: emotiv_bridge.py ──UDP :4210──▶  + UDP listener
+   (Cortex "com" stream)      (mental command → 1 char)          → SpiderBotMotion gait)
 ```
 
-The **only firmware** is `firmware/emotiv_spider/emotiv_spider.ino` (C/Arduino), flashed to
-the ESP8266. The **PC program** `bridge/emotiv_bridge.py` (Python) hosts the control panel
-and talks to the Emotiv Cortex service on your computer.
+- **Firmware** `firmware/emotiv_spider/emotiv_spider.ino` (C/Arduino) — flashed to the
+  ESP8266. It serves the control panel **and** listens for UDP commands.
+- **PC program** `bridge/emotiv_bridge.py` (Python) — only needed for the Emotiv path; it
+  turns mental commands into UDP characters. (It also serves its own localhost panel, handy
+  on the PC.)
+
+Everything is on your normal home Wi-Fi (the ESP8266 runs in **station mode**), so your phone
+just uses its regular Wi-Fi connection.
 
 ## Command reference
 
-| Char | Robot action | Button | Mental command (default) | Arrow key |
-|------|--------------|--------|--------------------------|-----------|
-| `F`  | walk forward | ▲ Forward | push    | ↑ |
-| `B`  | walk backward| ▼ Back    | pull    | ↓ |
-| `L`  | turn left    | ◄ Left    | left    | ← |
-| `R`  | turn right   | ► Right   | right   | → |
-| `S`  | stop (standby)| ■ Stop   | neutral | space |
+| Char | Robot action | Button | Mental command (default) |
+|------|--------------|--------|--------------------------|
+| `F`  | walk forward | ▲ Forward | push    |
+| `B`  | walk backward| ▼ Back    | pull    |
+| `L`  | turn left    | ◄ Left    | left    |
+| `R`  | turn right   | ► Right   | right   |
+| `S`  | stop (standby)| ■ Stop   | neutral |
 
 ---
 
@@ -45,9 +52,20 @@ and talks to the Emotiv Cortex service on your computer.
 4. Flash the board, then open **Serial Monitor @ 115200**. It prints the IP address the
    board received, e.g. `ESP8266 IP address: 192.168.1.50`. **Write this down.**
 
-> The PC and the ESP8266 must be on the **same Wi-Fi network** for UDP to reach the robot.
+> Your phone, the PC and the ESP8266 must all be on the **same Wi-Fi network**.
 
-## 2. Set up the PC bridge
+## 2. Drive from your phone — no PC needed
+
+1. Connect your phone to the **same Wi-Fi** the ESP8266 joined.
+2. Open a browser and go to `http://<ESP-IP>` (the IP from the Serial Monitor, e.g.
+   `http://192.168.1.50`).
+3. Tap **Forward / Back / Left / Right / Stop**. The spider walks, turns, and stops. Each tap
+   is echoed on the Serial Monitor as `Web command: …`.
+
+This proves the whole robot works with zero PC setup, and it's the easiest way to tune the
+gaits (see *Tuning* below). The Emotiv steps below are only needed for mind control.
+
+## 3. Set up the PC bridge (for mental commands)
 
 ```bash
 cd bridge
@@ -61,15 +79,9 @@ ESP8266_IP = "192.168.1.50"   # the IP from the Serial Monitor
 ```
 (`config.py` is git-ignored so your credentials stay private.)
 
-## 3. Verify with the control panel — no headset needed
-
-```bash
-python emotiv_bridge.py --ui-only
-```
-Open **http://localhost:8080** and click the buttons (or use the arrow keys). The spider
-should walk, turn, and stop. Each command is echoed in the terminal and on the ESP8266
-Serial Monitor. **Do this first** — it proves the Wi-Fi → UDP → servo path independent of
-Emotiv, and it's the easiest way to tune the gaits (see *Tuning* below).
+There's also a PC-side control panel if you want to test from the computer without the
+headset — `python emotiv_bridge.py --ui-only`, then open `http://localhost:8080`. (The phone
+panel from step 2 does the same thing straight from the robot.)
 
 ## 4. Add the Emotiv headset
 
@@ -82,16 +94,16 @@ Emotiv, and it's the easiest way to tune the gaits (see *Tuning* below).
    ```python
    PROFILE_NAME = "MyProfile"
    ```
-4. Run the full bridge (control panel **and** mental commands):
+4. Run the full bridge:
    ```bash
    python emotiv_bridge.py
    ```
    First run only: approve the app in the EMOTIV Launcher when prompted. Then *think* to
-   drive — and the browser buttons still work as a manual override.
+   drive — and the phone buttons still work as a manual override.
 
 ### Run order recap
-router on → flash ESP8266 → note its IP → fill `config.py` → verify with `--ui-only` →
-start EMOTIV Launcher with good signal → `python emotiv_bridge.py`.
+router on → flash ESP8266 → note its IP → **drive from the phone to verify** → (for mind
+control) fill `config.py` → start EMOTIV Launcher with good signal → `python emotiv_bridge.py`.
 
 ---
 
@@ -108,13 +120,14 @@ Only the **forward** gait comes from the official LAFVIN course; **backward** an
 - For per-servo trim, follow the LAFVIN **servo calibration** guide:
   <https://lafvin-quadruped-spider-robot.readthedocs.io/en/latest/AssemblyTutorial.html#servo-calibration-and-debug>
 
-Use `--ui-only` mode while tuning so you can trigger each movement on demand.
+Use the phone control panel while tuning so you can trigger each movement on demand.
 
 ## Troubleshooting
 
 | Symptom | Likely cause / fix |
 |---------|--------------------|
-| Buttons do nothing on the robot | PC and ESP8266 on different networks; wrong `ESP8266_IP`; firewall blocking UDP. Check the ESP Serial Monitor for `UDP command: …`. |
+| Phone can't open the page | Phone not on the same Wi-Fi as the ESP8266; wrong IP; typed `https` instead of `http`. Re-check the IP on the Serial Monitor. |
+| PC bridge buttons/commands do nothing | PC and ESP8266 on different networks; wrong `ESP8266_IP`; firewall blocking UDP. Check the ESP Serial Monitor for `UDP command: …`. |
 | Only `neutral`/Stop ever fires | Mental commands not trained, or `PROFILE_NAME` empty/wrong. Train in EmotivBCI and set the profile name. |
 | `authorize failed` / cert error | EMOTIV Launcher not running/logged in; the script already disables cert verification for the local self-signed cert. |
 | `No headset found` | EPOC X off, or USB dongle not inserted / Bluetooth not paired. |
@@ -127,9 +140,9 @@ Use `--ui-only` mode while tuning so you can trigger each movement on demand.
 ```
 emotiv_control/
 ├── README.md
-├── firmware/emotiv_spider/emotiv_spider.ino   # ESP8266: Wi-Fi + UDP + gaits
+├── firmware/emotiv_spider/emotiv_spider.ino   # ESP8266: Wi-Fi + web panel + UDP + gaits
 └── bridge/
-    ├── emotiv_bridge.py        # control panel + Emotiv → UDP
+    ├── emotiv_bridge.py        # PC-side panel + Emotiv → UDP
     ├── config.example.py       # copy to config.py and edit
     ├── requirements.txt        # websocket-client
     └── .gitignore              # keeps config.py out of git

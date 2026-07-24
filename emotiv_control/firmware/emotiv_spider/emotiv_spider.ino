@@ -1,33 +1,39 @@
 /*
  * emotiv_spider.ino  —  LAFVIN Quadruped Spider Robot
  * ----------------------------------------------------
- * Wi-Fi (station mode) + UDP command listener for the ESP8266.
+ * Wi-Fi (station mode) control for the ESP8266, two ways at once:
  *
- * A companion program on your PC (bridge/emotiv_bridge.py) sends a single
- * character over UDP; this firmware turns that character into a spider gait:
+ *   1. A built-in web control panel. Connect your PHONE to the same Wi-Fi and
+ *      open the ESP8266's IP address in a browser — buttons drive the spider,
+ *      no computer required.
+ *
+ *   2. A UDP command listener (port 4210). The PC program
+ *      bridge/emotiv_bridge.py forwards Emotiv EPOC X mental commands here.
+ *
+ * Both inputs set the same command; the spider keeps doing it until told
+ * otherwise:
  *
  *     'F' -> walk forward       'B' -> walk backward
  *     'L' -> turn left          'R' -> turn right
  *     'S' -> stop (standby)
- *
- * The PC program can send those characters from a browser control panel
- * (buttons) and/or from an Emotiv EPOC X mental command — this firmware does
- * not care where the character came from.
  *
  * Motion engine (SERVO_PINS, ranges, Servo_Zero, the Servo_Forward matrix,
  * init()/zero()/standby()/forward()) is reused unchanged from Course 3 of the
  * LAFVIN documentation. The backward() and turn() gaits are added here.
  *
  * Board:   ESP8266 (spider expansion board)
- * Libs:    ESP8266WiFi, WiFiUdp, Servo   (all bundled with the ESP8266 core)
+ * Libs:    ESP8266WiFi, ESP8266WebServer, WiFiUdp, Servo  (all bundled with
+ *          the ESP8266 core)
  *
  * >>> Set your Wi-Fi SSID / PASSWORD below, flash, then open the Serial
- *     Monitor @115200 to read the IP address the board was given. Put that IP
- *     into bridge/config.py (ESP8266_IP).  The PC and the ESP8266 MUST be on
- *     the same Wi-Fi network.
+ *     Monitor @115200 to read the IP address the board was given.
+ *       - Type that IP into your phone's browser to use the control panel.
+ *       - Put that IP into bridge/config.py (ESP8266_IP) for mental commands.
+ *     The phone, the PC and the ESP8266 must all be on the SAME Wi-Fi network.
  */
 
 #include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
 #include <WiFiUdp.h>
 #include <Servo.h>
 #include <Arduino.h>
@@ -40,6 +46,8 @@ const unsigned int LOCAL_UDP_PORT = 4210;           // must match UDP_PORT in co
 
 WiFiUDP Udp;
 char incomingPacket[8];                             // we only need the first byte
+
+ESP8266WebServer server(80);                        // phone control panel
 
 // ============================ Servo / motion setup ===========================
 // (reused verbatim from Course 3)
@@ -77,8 +85,8 @@ const int Servo_Forward[][ALLMATRIX] = {
 // The turn gaits below are DERIVED from the forward gait: we damp the stride of
 // the legs on one side so the body curves toward that side. The exact left/right
 // leg grouping depends on how YOUR robot is assembled. These are STARTER VALUES
-// — expect to fine-tune them on real hardware (use the browser control panel in
-// --ui-only mode, and the servo-calibration page in the LAFVIN docs).
+// — expect to fine-tune them on real hardware (use the phone control panel, and
+// the servo-calibration page in the LAFVIN docs).
 //
 // If "turn left" makes the robot turn right (or vice-versa), swap the two
 // index lists below. If turns are too weak/strong, change TURN_DAMP
@@ -93,9 +101,84 @@ const float TURN_DAMP       = 0.35;     // fraction of stride kept on the damped
 // These are the horizontal columns of Servo_Forward row 0.
 const int Neutral_H[ALLSERVOS] = { 70, 90, 90, 110, 110, 90, 90, 70 };
 
-// Forward-declared so the gait loops can poll for a new UDP command mid-cycle
-// and abort early when the operator changes their mind.
-char pollCommand(char current);
+// Current active command; 'S' (stop/standby) at power-up. Set by both the web
+// panel and the UDP listener.
+char currentCmd = 'S';
+
+// Forward declaration: process web + UDP input (may update currentCmd).
+void service();
+
+// ============================== Web control panel ============================
+// A self-contained dark-themed D-pad served straight from the ESP8266.
+const char CONTROL_PANEL_HTML[] PROGMEM = R"HTML(
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spider Control</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+       background:#0f1115;color:#e8e8e8;min-height:100vh;display:flex;
+       flex-direction:column;justify-content:center;align-items:center;padding:20px;}
+  h1{font-weight:500;font-size:22px;margin-bottom:6px;}
+  .sub{color:#8a8f98;font-size:13px;margin-bottom:28px;text-align:center;}
+  .pad{display:grid;grid-template-columns:repeat(3,90px);grid-template-rows:repeat(3,90px);gap:12px;}
+  button{font-size:15px;font-weight:600;color:#e8e8e8;background:#1c2230;
+         border:1px solid #2c3444;border-radius:16px;cursor:pointer;
+         transition:transform .05s,background .15s;user-select:none;-webkit-tap-highlight-color:transparent;}
+  button:active{transform:scale(.94);background:#3a4670;}
+  .fwd{grid-column:2;grid-row:1;}
+  .left{grid-column:1;grid-row:2;}
+  .stop{grid-column:2;grid-row:2;background:#4a1f24;border-color:#6b2b32;}
+  .right{grid-column:3;grid-row:2;}
+  .back{grid-column:2;grid-row:3;}
+  .status{margin-top:26px;font-size:13px;color:#8a8f98;}
+  .status b{color:#7dd3fc;font-size:15px;}
+</style>
+</head>
+<body>
+  <h1>&#128375;&#65039; Spider Control</h1>
+  <div class="sub">Phone buttons and mental commands share the same robot.</div>
+  <div class="pad">
+    <button class="fwd"   onclick="cmd('F')">&#9650;<br>Forward</button>
+    <button class="left"  onclick="cmd('L')">&#9664;<br>Left</button>
+    <button class="stop"  onclick="cmd('S')">&#9632;<br>Stop</button>
+    <button class="right" onclick="cmd('R')">&#9654;<br>Right</button>
+    <button class="back"  onclick="cmd('B')">&#9660;<br>Back</button>
+  </div>
+  <div class="status">Last command: <b id="last">-</b></div>
+<script>
+function cmd(c){
+  fetch('/cmd?c='+c).then(r=>r.text()).then(()=>{
+    document.getElementById('last').innerText=c;
+  }).catch(e=>console.error(e));
+}
+</script>
+</body>
+</html>
+)HTML";
+
+void handleRoot() {
+    server.send_P(200, "text/html", CONTROL_PANEL_HTML);
+}
+
+void handleCmd() {
+    String c = server.arg("c");
+    if (c.length() > 0) {
+        char ch = c.charAt(0);
+        if (ch == 'F' || ch == 'B' || ch == 'L' || ch == 'R' || ch == 'S') {
+            if (ch != currentCmd) {
+                currentCmd = ch;
+                Serial.printf("Web command: %c\n", ch);
+            }
+            server.send(200, "text/plain", "ok");
+            return;
+        }
+    }
+    server.send(400, "text/plain", "invalid");
+}
 
 // =============================================================================
 class SpiderBotMotion {
@@ -110,13 +193,18 @@ public:
         delay(200);
     }
 
-    // Write one row of angles (indices 0..7) then wait `ms`
+    // Write one row of angles (indices 0..7) then wait `ms`, servicing input.
     void writeFrame(const int angles[ALLSERVOS], int ms) {
         for (int i = 0; i < ALLSERVOS; i++) {
             int angle = constrain(angles[i], ANGLE_MIN, ANGLE_MAX);
             servos[i].write(angle);
         }
-        delay(ms);
+        // Keep the web server responsive during the step delay.
+        unsigned long end = millis() + ms;
+        while ((long)(end - millis()) > 0) {
+            service();
+            delay(5);
+        }
     }
 
     // Move all servos to the zero position
@@ -135,33 +223,28 @@ public:
     }
 
     // ---- Forward: one full gait cycle, abortable between steps -------------
-    // Returns the command that should run next (unchanged unless a new UDP
-    // packet arrived while walking).
-    char forward(char cmd) {
+    void forward() {
         for (int step = 0; step < Servo_Forward_Step; step++) {
             writeFrame(Servo_Forward[step], Servo_Forward[step][8]);
-            char next = pollCommand(cmd);
-            if (next != cmd) return next;          // operator changed command
+            if (currentCmd != 'F') return;         // command changed mid-cycle
         }
-        return cmd;
     }
 
     // ---- Backward: the forward keyframes walked in reverse order ----------
-    char backward(char cmd) {
+    void backward() {
         for (int step = Servo_Forward_Step - 1; step >= 0; step--) {
             writeFrame(Servo_Forward[step], Servo_Forward[step][8]);
-            char next = pollCommand(cmd);
-            if (next != cmd) return next;
+            if (currentCmd != 'B') return;
         }
-        return cmd;
     }
 
     // ---- Turn: forward gait with one side's stride damped ------------------
     // left == true  -> damp the LEFT legs  -> body curves/pivots left
     // left == false -> damp the RIGHT legs -> body curves/pivots right
-    char turn(bool left, char cmd) {
-        const int* damp   = left ? LEFT_H_SERVOS : RIGHT_H_SERVOS;
-        int        dampN  = left ? LEFT_H_COUNT  : RIGHT_H_COUNT;
+    void turn(bool left) {
+        const int* damp  = left ? LEFT_H_SERVOS : RIGHT_H_SERVOS;
+        int        dampN = left ? LEFT_H_COUNT  : RIGHT_H_COUNT;
+        char       want  = left ? 'L' : 'R';
 
         for (int step = 0; step < Servo_Forward_Step; step++) {
             int frame[ALLSERVOS];
@@ -176,22 +259,20 @@ public:
             }
 
             writeFrame(frame, Servo_Forward[step][8]);
-            char next = pollCommand(cmd);
-            if (next != cmd) return next;
+            if (currentCmd != want) return;
         }
-        return cmd;
     }
 };
 
 SpiderBotMotion robot;
 
-// Current active command; 'S' (stop/standby) at power-up.
-char currentCmd = 'S';
-
 // =============================================================================
-// Read a UDP packet if one is waiting and return the (possibly new) command.
-// Only F/B/L/R/S are accepted; anything else is ignored.
-char pollCommand(char current) {
+// Process both input paths. May update the global currentCmd.
+void service() {
+    // 1) Web control panel (phone)
+    server.handleClient();
+
+    // 2) UDP command (PC / Emotiv)
     int packetSize = Udp.parsePacket();
     if (packetSize) {
         int len = Udp.read(incomingPacket, sizeof(incomingPacket) - 1);
@@ -199,20 +280,19 @@ char pollCommand(char current) {
             incomingPacket[len] = 0;
             char c = incomingPacket[0];
             if (c == 'F' || c == 'B' || c == 'L' || c == 'R' || c == 'S') {
-                if (c != current) {
+                if (c != currentCmd) {
+                    currentCmd = c;
                     Serial.printf("UDP command: %c\n", c);
                 }
-                return c;
             }
         }
     }
-    return current;
 }
 
 void setup() {
     Serial.begin(115200);
     delay(100);
-    Serial.println("\nQuadBot (Emotiv/UDP) starting...");
+    Serial.println("\nQuadBot (Emotiv/UDP + Web) starting...");
 
     // Bring up the servos and park in a known pose
     robot.init();
@@ -231,25 +311,31 @@ void setup() {
     }
     Serial.println();
     Serial.print("Wi-Fi connected. ESP8266 IP address: ");
-    Serial.println(WiFi.localIP());   // <-- copy this into config.py (ESP8266_IP)
+    Serial.println(WiFi.localIP());   // <-- open this IP on your phone / put in config.py
+
+    // Start the web control panel
+    server.on("/", handleRoot);
+    server.on("/cmd", handleCmd);
+    server.begin();
+    Serial.println("Web control panel ready: open the IP above in a browser.");
 
     // Start listening for UDP commands
     Udp.begin(LOCAL_UDP_PORT);
     Serial.printf("Listening for UDP commands on port %u\n", LOCAL_UDP_PORT);
-    Serial.println("Ready. Send F/B/L/R/S from the PC bridge.");
+    Serial.println("Ready. Drive from the phone panel or send F/B/L/R/S from the PC bridge.");
 }
 
 void loop() {
-    // Pick up any newly-arrived command
-    currentCmd = pollCommand(currentCmd);
+    // Pick up any newly-arrived command (web or UDP)
+    service();
 
-    // Run one gait cycle for the active command (each returns early if the
-    // command changes mid-cycle, keeping the robot responsive).
+    // Run the active command. Gaits loop cycle-after-cycle until the command
+    // changes; each returns early when it does (checked inside writeFrame).
     switch (currentCmd) {
-        case 'F': currentCmd = robot.forward(currentCmd);      break;
-        case 'B': currentCmd = robot.backward(currentCmd);     break;
-        case 'L': currentCmd = robot.turn(true,  currentCmd);  break;
-        case 'R': currentCmd = robot.turn(false, currentCmd);  break;
+        case 'F': robot.forward();      break;
+        case 'B': robot.backward();     break;
+        case 'L': robot.turn(true);     break;
+        case 'R': robot.turn(false);    break;
         case 'S':
         default:
             robot.standby();     // hold the standby pose while stopped
