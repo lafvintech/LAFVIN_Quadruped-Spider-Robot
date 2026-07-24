@@ -39,8 +39,24 @@
 #include <Arduino.h>
 
 // ======================= Wi-Fi / network configuration =======================
+// Home Wi-Fi to join (station mode). This is required for Emotiv mental commands
+// (the PC and the ESP8266 must be on the same router).
 const char* WIFI_SSID     = "YOUR_WIFI_SSID";       // <-- change me
 const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";   // <-- change me
+
+// Hotspot (Access Point) fallback. If the ESP8266 cannot join WIFI_SSID within
+// WIFI_TIMEOUT_S seconds, it starts its own Wi-Fi network named AP_SSID so a
+// phone can still connect and drive the robot at http://192.168.4.1 — handy when
+// there is no router around. Set START_IN_AP = true to always host the hotspot
+// and skip joining a router.
+//
+// NOTE: the phone control panel works in either mode. Emotiv mental commands
+// need STATION mode (PC + ESP8266 on the same router), so use a real Wi-Fi
+// network for mind control; the hotspot is a phone-only fallback.
+const char* AP_SSID       = "Spider-Robot";
+const char* AP_PASSWORD   = "12345678";   // min 8 chars, or "" for an open network
+const bool  START_IN_AP   = false;        // true = always hotspot, never join a router
+const int   WIFI_TIMEOUT_S = 15;          // seconds to try the router before falling back
 
 const unsigned int LOCAL_UDP_PORT = 4210;           // must match UDP_PORT in config.py
 
@@ -289,6 +305,49 @@ void service() {
     }
 }
 
+// Start the hotspot (Access Point) so a phone can connect with no router.
+void startAccessPoint() {
+    Serial.printf("Starting hotspot \"%s\"...\n", AP_SSID);
+    WiFi.mode(WIFI_AP);
+    IPAddress apIP(192, 168, 4, 1);
+    WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
+    if (strlen(AP_PASSWORD) >= 8) {
+        WiFi.softAP(AP_SSID, AP_PASSWORD);
+    } else {
+        WiFi.softAP(AP_SSID);            // open network if no valid password
+    }
+    Serial.print("Hotspot ready. On your phone join Wi-Fi \"");
+    Serial.print(AP_SSID);
+    Serial.print("\", then open http://");
+    Serial.println(WiFi.softAPIP());     // 192.168.4.1
+}
+
+// Join the home router (station mode); fall back to the hotspot on timeout.
+void setupWiFi() {
+    if (START_IN_AP) {
+        startAccessPoint();
+        return;
+    }
+
+    Serial.printf("Connecting to Wi-Fi \"%s\"", WIFI_SSID);
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    unsigned long deadline = millis() + (unsigned long)WIFI_TIMEOUT_S * 1000UL;
+    while (WiFi.status() != WL_CONNECTED && (long)(deadline - millis()) > 0) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println();
+
+    if (WiFi.status() == WL_CONNECTED) {
+        Serial.print("Wi-Fi connected. ESP8266 IP address: ");
+        Serial.println(WiFi.localIP());  // open on your phone / put in config.py
+    } else {
+        Serial.println("Could not join Wi-Fi within the timeout — using hotspot fallback.");
+        startAccessPoint();
+    }
+}
+
 void setup() {
     Serial.begin(115200);
     delay(100);
@@ -301,17 +360,8 @@ void setup() {
     Serial.println("Standby position...");
     robot.standby();
 
-    // Connect to Wi-Fi (station mode)
-    Serial.printf("Connecting to Wi-Fi \"%s\"", WIFI_SSID);
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-    while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.print(".");
-    }
-    Serial.println();
-    Serial.print("Wi-Fi connected. ESP8266 IP address: ");
-    Serial.println(WiFi.localIP());   // <-- open this IP on your phone / put in config.py
+    // Connect to Wi-Fi (station mode, with hotspot fallback)
+    setupWiFi();
 
     // Start the web control panel
     server.on("/", handleRoot);

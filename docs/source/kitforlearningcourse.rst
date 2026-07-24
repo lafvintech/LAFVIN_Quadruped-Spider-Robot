@@ -878,6 +878,11 @@ Wiring diagram
 - Your phone, the ESP8266, and the computer running the Python bridge must all be on the
   **same Wi-Fi network** (the ESP8266 joins your home router in station mode).
 
+- **No router?** If the ESP8266 cannot join your Wi-Fi within about 15 seconds, it starts its
+  own hotspot named **Spider-Robot** (password **12345678**). Join that network on your phone
+  and open **192.168.4.1** to use the control panel. (Mental commands still require a real
+  Wi-Fi network shared with the PC.)
+
 ----
 
 Command reference
@@ -920,7 +925,8 @@ Example code (ESP8266 — Arduino IDE)
 Set your Wi-Fi ``WIFI_SSID`` / ``WIFI_PASSWORD`` near the top, flash the board, then open the
 Serial Monitor at 115200 baud to read the IP address the board was given. Open that IP on your
 phone's browser to use the control panel (and put the same IP into the Python program for
-mental commands).
+mental commands). If the board falls back to its hotspot, join **Spider-Robot** and use
+**192.168.4.1** instead.
 
 .. code-block:: cpp
 
@@ -965,8 +971,24 @@ mental commands).
   #include <Arduino.h>
 
   // ======================= Wi-Fi / network configuration =======================
+  // Home Wi-Fi to join (station mode). This is required for Emotiv mental commands
+  // (the PC and the ESP8266 must be on the same router).
   const char* WIFI_SSID     = "YOUR_WIFI_SSID";       // <-- change me
   const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";   // <-- change me
+
+  // Hotspot (Access Point) fallback. If the ESP8266 cannot join WIFI_SSID within
+  // WIFI_TIMEOUT_S seconds, it starts its own Wi-Fi network named AP_SSID so a
+  // phone can still connect and drive the robot at http://192.168.4.1 — handy when
+  // there is no router around. Set START_IN_AP = true to always host the hotspot
+  // and skip joining a router.
+  //
+  // NOTE: the phone control panel works in either mode. Emotiv mental commands
+  // need STATION mode (PC + ESP8266 on the same router), so use a real Wi-Fi
+  // network for mind control; the hotspot is a phone-only fallback.
+  const char* AP_SSID       = "Spider-Robot";
+  const char* AP_PASSWORD   = "12345678";   // min 8 chars, or "" for an open network
+  const bool  START_IN_AP   = false;        // true = always hotspot, never join a router
+  const int   WIFI_TIMEOUT_S = 15;          // seconds to try the router before falling back
 
   const unsigned int LOCAL_UDP_PORT = 4210;           // must match UDP_PORT in config.py
 
@@ -1215,6 +1237,49 @@ mental commands).
       }
   }
 
+  // Start the hotspot (Access Point) so a phone can connect with no router.
+  void startAccessPoint() {
+      Serial.printf("Starting hotspot \"%s\"...\n", AP_SSID);
+      WiFi.mode(WIFI_AP);
+      IPAddress apIP(192, 168, 4, 1);
+      WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
+      if (strlen(AP_PASSWORD) >= 8) {
+          WiFi.softAP(AP_SSID, AP_PASSWORD);
+      } else {
+          WiFi.softAP(AP_SSID);            // open network if no valid password
+      }
+      Serial.print("Hotspot ready. On your phone join Wi-Fi \"");
+      Serial.print(AP_SSID);
+      Serial.print("\", then open http://");
+      Serial.println(WiFi.softAPIP());     // 192.168.4.1
+  }
+
+  // Join the home router (station mode); fall back to the hotspot on timeout.
+  void setupWiFi() {
+      if (START_IN_AP) {
+          startAccessPoint();
+          return;
+      }
+
+      Serial.printf("Connecting to Wi-Fi \"%s\"", WIFI_SSID);
+      WiFi.mode(WIFI_STA);
+      WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+      unsigned long deadline = millis() + (unsigned long)WIFI_TIMEOUT_S * 1000UL;
+      while (WiFi.status() != WL_CONNECTED && (long)(deadline - millis()) > 0) {
+          delay(500);
+          Serial.print(".");
+      }
+      Serial.println();
+
+      if (WiFi.status() == WL_CONNECTED) {
+          Serial.print("Wi-Fi connected. ESP8266 IP address: ");
+          Serial.println(WiFi.localIP());  // open on your phone / put in config.py
+      } else {
+          Serial.println("Could not join Wi-Fi within the timeout — using hotspot fallback.");
+          startAccessPoint();
+      }
+  }
+
   void setup() {
       Serial.begin(115200);
       delay(100);
@@ -1227,17 +1292,8 @@ mental commands).
       Serial.println("Standby position...");
       robot.standby();
 
-      // Connect to Wi-Fi (station mode)
-      Serial.printf("Connecting to Wi-Fi \"%s\"", WIFI_SSID);
-      WiFi.mode(WIFI_STA);
-      WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-      while (WiFi.status() != WL_CONNECTED) {
-          delay(500);
-          Serial.print(".");
-      }
-      Serial.println();
-      Serial.print("Wi-Fi connected. ESP8266 IP address: ");
-      Serial.println(WiFi.localIP());   // <-- open this IP on your phone / put in config.py
+      // Connect to Wi-Fi (station mode, with hotspot fallback)
+      setupWiFi();
 
       // Start the web control panel
       server.on("/", handleRoot);
@@ -1613,7 +1669,8 @@ Achieved Effect
 
 - Connect your phone to the same Wi-Fi as the ESP8266 and open ``http://<board-IP>`` (the IP
   from the Serial Monitor). Tap **Forward / Back / Left / Right / Stop** and the spider walks,
-  turns, and stops — no computer required. This confirms the Wi-Fi and servo path.
+  turns, and stops — no computer required. With no router, join the **Spider-Robot** hotspot
+  and open ``http://192.168.4.1`` instead.
 
 - With a trained EMOTIV profile loaded, run ``python emotiv_bridge.py`` on your computer and
   *think* the trained actions (push / pull / left / right / neutral) to drive the spider. The

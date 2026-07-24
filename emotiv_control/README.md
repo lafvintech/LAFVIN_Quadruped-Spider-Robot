@@ -24,8 +24,9 @@ with the buttons **before** dealing with the headset.
   turns mental commands into UDP characters. (It also serves its own localhost panel, handy
   on the PC.)
 
-Everything is on your normal home Wi-Fi (the ESP8266 runs in **station mode**), so your phone
-just uses its regular Wi-Fi connection.
+Normally everything is on your home Wi-Fi (the ESP8266 runs in **station mode**), so your
+phone uses its regular Wi-Fi connection. If no router is available, the ESP8266 falls back to
+its own **`Spider-Robot`** hotspot at `192.168.4.1` for phone control (see step 2).
 
 ## Command reference
 
@@ -56,11 +57,27 @@ just uses its regular Wi-Fi connection.
 
 ## 2. Drive from your phone — no PC needed
 
+**If a router is available (station mode):**
+
 1. Connect your phone to the **same Wi-Fi** the ESP8266 joined.
 2. Open a browser and go to `http://<ESP-IP>` (the IP from the Serial Monitor, e.g.
    `http://192.168.1.50`).
 3. Tap **Forward / Back / Left / Right / Stop**. The spider walks, turns, and stops. Each tap
    is echoed on the Serial Monitor as `Web command: …`.
+
+**No router around? Use the hotspot fallback (AP mode):**
+
+If the ESP8266 can't join your Wi-Fi within ~15 s, it automatically starts its own network:
+
+1. On your phone, join the Wi-Fi network **`Spider-Robot`** (password **`12345678`**).
+2. Open **`http://192.168.4.1`** and use the same buttons.
+
+You can also force hotspot mode by setting `START_IN_AP = true` in the sketch, and change the
+name/password via `AP_SSID` / `AP_PASSWORD`.
+
+> The phone panel works in either mode. **Mental commands need station mode** (the PC and the
+> ESP8266 on the same router), so use a real Wi-Fi network for mind control; the hotspot is a
+> phone-only fallback.
 
 This proves the whole robot works with zero PC setup, and it's the easiest way to tune the
 gaits (see *Tuning* below). The Emotiv steps below are only needed for mind control.
