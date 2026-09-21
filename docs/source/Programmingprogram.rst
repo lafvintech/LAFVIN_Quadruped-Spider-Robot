@@ -28,6 +28,9 @@ Install Serial Port Tool
 
 This kit uses an ESP8266 board with a CP2102 USB-to-UART bridge. Ensure the CP2102 driver is installed on your computer before connecting the board, or the serial port will not be detected. Connect the board, press Win+X to open Device Manager, and verify the driver is installed. If not, use the link below to download and install it.
 
+For Windows
+============
+
 .. image:: _static/program/1.CP2102.png
    :width: 800
    :align: center
@@ -43,6 +46,34 @@ For detailed download and installation instructions, please watch the video belo
 .. video:: _static/program/driver_ins.mp4
     :width: 100%
 
+----
+
+For Mac
+=======
+
+- The CP2102 driver is already included in macOS, so you do not need to install it separately. Simply connect the board to your Mac, and the serial port will be detected automatically.
+
+- If the port is not displayed, please check the USB cable or click here to download and install the serial port driver. `download CP210X <https://www.silabs.com/software-and-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads>`_
+
+.. image:: _static/arduino/79.mac02.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+- After downloading, simply follow the on-screen prompts to install it.
+
+.. image:: _static/arduino/80.mac03.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
+- If you encounter any issues during the installation process, please contact our after-sales support team for assistance. 
 
 ----
 
