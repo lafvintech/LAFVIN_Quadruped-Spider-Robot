@@ -133,7 +133,7 @@ E. Set the Flash baud rate to **115200**.
    :align: center
 
 .. raw:: html
-   
+
    <div style="margin-top: 30px;"></div>
 
 F. Click **FLASH** to start the burning process.
@@ -253,7 +253,7 @@ F. After the burning is completed, the interface will display the FINISH prompt.
 
    If the flashing process fails, please follow these steps:
 
-   - Confirm that the ESP32 development board is properly connected to the computer via a USB cable and that the CH340 driver is installed.
+   - Confirm that the ESP32 development board is properly connected to the computer via a USB cable and that the CP2102 driver is installed.
    - Check that COMx in the flashing tool is the actual serial port number.
    - Confirm that the firmware file is correctly placed in the BIN folder and check the box on the left.
    - Verify the flashing parameter settings: SPI SPEED = 80MHz, SPI MODE = DIO, BAUD = 921600.
