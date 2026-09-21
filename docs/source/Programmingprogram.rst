@@ -124,7 +124,7 @@ D. Click **Connect**, and in the pop-up window, select the corresponding port to
 
 .. raw:: html
 
-   <div style="margin-top: 30px;"></div>
+  <div style="margin-top: 30px;"></div>
 
 E. Set the Flash baud rate to **115200**.
 
@@ -133,6 +133,7 @@ E. Set the Flash baud rate to **115200**.
    :align: center
 
 .. raw:: html
+   
    <div style="margin-top: 30px;"></div>
 
 F. Click **FLASH** to start the burning process.
