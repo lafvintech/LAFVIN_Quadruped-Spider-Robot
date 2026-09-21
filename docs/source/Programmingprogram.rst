@@ -95,9 +95,18 @@ D. Click **Connect**, and in the pop-up window, select the corresponding port to
 
    <div style="margin-top: 30px;"></div>
 
-E. Click **FLASH** to start the burning process.
+E. Set the Flash baud rate to **115200**.
 
-.. image:: _static/program/5.lafvin.png
+.. image:: _static/program/3.Baud.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+   <div style="margin-top: 30px;"></div>
+
+F. Click **FLASH** to start the burning process.
+
+.. image:: _static/program/5.lafvin2.png
    :width: 800
    :align: center
 
@@ -105,9 +114,9 @@ E. Click **FLASH** to start the burning process.
 
    <div style="margin-top: 30px;"></div>
 
-F. Waiting for the burning process to complete.
+G. Waiting for the burning process to complete.
 
-.. image:: _static/program/6.lafvin.png
+.. image:: _static/program/6.lafvin2.png
    :width: 800
    :align: center
 
@@ -115,7 +124,7 @@ F. Waiting for the burning process to complete.
 
    <div style="margin-top: 30px;"></div>
 
-G. After the program is burned, press the RST reset button on the development board and the system will start running.
+H. After the program is burned, press the RST reset button on the development board and the system will start running.
 
 ----
 
