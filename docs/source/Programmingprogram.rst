@@ -55,7 +55,7 @@ For Mac
 
 - If the port is not displayed, please check the USB cable or click here to download and install the serial port driver. `download CP210X <https://www.silabs.com/software-and-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads>`_
 
-.. image:: _static/arduino/79.mac02.png
+.. image:: _static//program/79.mac02.png
    :width: 800
    :align: center
 
@@ -65,7 +65,7 @@ For Mac
 
 - After downloading, simply follow the on-screen prompts to install it.
 
-.. image:: _static/arduino/80.mac03.png
+.. image:: _static//program/80.mac03.png
    :width: 800
    :align: center
 
