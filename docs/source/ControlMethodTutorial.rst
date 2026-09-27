@@ -140,10 +140,18 @@ Infrared Remote Control
 
    <div style="margin-top: 30px;"></div>
 
+.. image:: _static/APP/14.ir.png
+    :width: 800
+    :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 .. attention::
 
     Due to international shipping restrictions, the remote control does not come with a battery. To use the remote control, please purchase a CR2025 button cell battery separately.
-    
+
 ----
 
 Automatic Obstacle Avoidance
