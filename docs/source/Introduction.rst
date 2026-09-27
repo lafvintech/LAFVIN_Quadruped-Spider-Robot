@@ -86,6 +86,16 @@ Bill of Materials
 
 Upon receiving the kit, please first check all components against the above bill of materials. If you find any missing or damaged items, please contact our technical support team immediately.
 
+- **18650 batteries come in flat-top and button-top varieties,please purchase the flat-top version.**
+
+.. image:: _static/4.18650.png
+   :width: 600
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 ----
 
 Resource Download
