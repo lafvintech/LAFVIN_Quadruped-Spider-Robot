@@ -83,8 +83,13 @@ Bill of Materials
      - Anti-slip Rubber Sleeves
      - x8
 
+----
 
-Upon receiving the kit, please first check all components against the above bill of materials. If you find any missing or damaged items, please contact our technical support team immediately.
+.. note::
+
+ - Upon receiving the kit, please first check all components against the above bill of materials. If you find any missing or damaged items, please contact our technical support team immediately.
+ 
+ - The package does not include an 18650 battery. The Type-C data cable is only for flashing firmware and charging. Please note that powering the entire system solely through the Type-C data cable is insufficient and may cause the robot to crash or restart.
 
 - **18650 batteries come in flat-top and button-top varieties,please purchase the flat-top version.**
 
