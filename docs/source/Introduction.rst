@@ -37,7 +37,7 @@ The robot is equipped with an ultrasonic distance sensor that enables it to dete
 Bill of Materials
 -----------------
 
-.. image:: _static/3.bom11.png
+.. image:: _static/3.bom1.png
    :width: 800
    :align: center
 
