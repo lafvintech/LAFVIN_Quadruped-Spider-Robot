@@ -55,7 +55,7 @@ Install Serial Port Tool
 This kit uses an ESP8266 board with a CP2102 USB-to-UART bridge. Ensure the CP2102 driver is installed on your computer before connecting the board, or the serial port will not be detected. Connect the board, press Win+X to open Device Manager, and verify the driver is installed. If not, use the link below to download and install it.
 
 For Windows
-============
+~~~~~~~~~~
 
 .. image:: _static/program/1.CP2102.png
    :width: 800
@@ -75,7 +75,7 @@ For detailed download and installation instructions, please watch the video belo
 ----
 
 For Mac
-=======
+~~~~~~~
 
 - The CP2102 driver is already included in macOS, so you do not need to install it separately. Simply connect the board to your Mac, and the serial port will be detected automatically.
 
