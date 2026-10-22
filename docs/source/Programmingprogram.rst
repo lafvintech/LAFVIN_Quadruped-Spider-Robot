@@ -12,7 +12,7 @@ Follow these steps to verify the firmware:
 
 #. Connect the ESP8266 development board to a USB data cable and power it on. No other components need to be connected.
 #. Check that both blue LEDs on the development board are lit.
-#. Turn on Wi-Fi on your phone and search for a network named ``robot-xxx``.
+#. Turn on Wi-Fi on your phone and search for a network named ``Robot-xxx``.
 
 .. image:: _static/program/81.WIFI.png
    :width: 800
@@ -22,7 +22,7 @@ Follow these steps to verify the firmware:
 
    <div style="margin-top: 30px;"></div>
 
-If both blue LEDs are lit and your phone can find the ``robot-xxx`` Wi-Fi network, the firmware has been successfully flashed and the board is ready to use.
+If both blue LEDs are lit and your phone can find the ``Robot-xxx`` Wi-Fi network, the firmware has been successfully flashed and the board is ready to use.
 
 .. warning::
 
