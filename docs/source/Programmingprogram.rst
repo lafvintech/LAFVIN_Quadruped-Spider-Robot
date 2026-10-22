@@ -1,9 +1,24 @@
 Flash The Firmware
 ===================
 
-**The kit is shipped without firmware preloaded, so no response after power-up is normal. Follow the steps below to program the spider robot and make it move.**
+Important Checks Before Use
+---------------------------
 
-**We provide two methods for flashing firmware; you can choose the method that suits you best.**
+.. important::
+
+   The ESP8266 development board included with this spider robot kit is normally pre-flashed with the required firmware. To make sure that no board was missed, verify the firmware before using the kit.
+
+Follow these steps to verify the firmware:
+
+#. Connect the ESP8266 development board to a USB data cable and power it on. No other components need to be connected.
+#. Check that both blue LEDs on the development board are lit.
+#. Turn on Wi-Fi on your phone and search for a network named ``robot-xxx``.
+
+If both blue LEDs are lit and your phone can find the ``robot-xxx`` Wi-Fi network, the firmware has been successfully flashed and the board is ready to use.
+
+.. warning::
+
+   If either of these conditions is not met, the firmware may not have been flashed. Please follow the tutorial below to flash the firmware before using the board.
 
 ----
 
