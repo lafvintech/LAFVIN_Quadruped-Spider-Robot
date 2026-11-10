@@ -1,6 +1,18 @@
 Assembly Tutorial
 =================
 
+.. attention::
+
+ The acrylic panels included in this kit are typically covered with a protective film; please remove this film before beginning assembly to ensure a proper fit and a clean appearance.
+ 
+ .. image:: _static/AssemblyTutorial/0.YKL.png
+   :width: 800
+   :align: center
+
+.. raw:: html
+
+   <div style="margin-top: 30px;"></div>
+
 Video Assembly Tutorial
 -----------------------
 
